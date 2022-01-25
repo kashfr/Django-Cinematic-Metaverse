@@ -1,4 +1,4 @@
-# Django-Cinematic-Universe
+# Django-Cinematic-Metaverse
 
 Django Cinematic Metaverse is an NFT platform designed for comic book fans to buy and sell superhero NFTs. While on the platform, users can browse around to find out more information about their favorite characters as well as all of the movies they've starred in throughout the inception of the franchise.
 
