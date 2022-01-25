@@ -8,7 +8,31 @@ Bidders will be using the SHA coin created and developed by the anonymous Mr. Sh
 
 ## Wireframes
 
+https://whimsical.com/Sf6nNpC7fAY63YVNeSxZyW
+
+![wireframe](images/wireframe.png)
+
 ## Component Hierarchy
+
+https://www.figma.com/file/UeiMeG3AKHzdRcwubPO9Sz/Django-Cinematic-Universe?node-id=0%3A1
+
+MacBook Pro
+
+![home screen](images/home.png)
+
+![character detail screen](images/character_detail.png)
+
+![movie detail screen](images/movie_detail.png)
+
+![sign up screen](images/sign_up.png)
+
+![sign in screen](images/sign_in.png)
+
+![list item screen](images/list_item.png)
+
+Media Query
+
+![media query screens](images/media_query.png)
 
 ## Dependencies
 
@@ -39,7 +63,7 @@ class Character(models.Model):
         return self.name
 
 class Movie(models.Model):
-    title = models.CharField(max_length=256)
+    title = models.ForeignKey(Character, on_delete=models.CASCADE, related_name='titles')
     publication_date = models.DateField()
     overview = models.CharField(max_length=1000)
 
