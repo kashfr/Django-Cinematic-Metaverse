@@ -36,18 +36,30 @@ Media Query
 
 ## Dependencies
 
-django,
-psycopg2-binary,
-pillow,
-django-extensions,
-autopep8,
-djangorestframework,
-pytz,
-djangorestframework-simplejwt,
-gunicorn,
-whitenoise,
-python-dotenv,
-dj-database-url,
+django
+
+psycopg2-binary
+
+Pillow
+
+django_extensions
+
+autopep8
+
+djangorestframework
+
+pytz
+
+djangorestframework-simplejwt
+
+gunicorn
+
+whitenoise
+
+python-dotenv
+
+dj-database-url
+
 react-router-dom
 
 ## API and Data Sample
@@ -56,7 +68,7 @@ react-router-dom
 class Character(models.Model):
     name = models.CharField(max_length=128)
     image_url = models.ImageField(upload_to='images/', max_length=1000, blank=True, null=True)
-    minimum_bid = models.CharField(max_length=128)
+    starting_bid = models.CharField(max_length=128)
     start_date = forms.DateField(initial=datetime.date.today, label="Start Date")
     auction_duration = forms.ChoiceField(choices=INTERVAL_CHOICES, initial='one_day', label="Interval")
 
@@ -72,6 +84,10 @@ class Movie(models.Model):
         return self.title
 ```
 
+## Entity Relationship Database
+
+![erd](images/entity_relationship_database.png)
+
 #### MVP
 
 Crate a marketplace where fans can purchase NFTs, list an NFT for sale or just browse around to learn things about their favorite characters.
@@ -79,6 +95,12 @@ Crate a marketplace where fans can purchase NFTs, list an NFT for sale or just b
 #### PostMVP
 
 Add trailers to movie page.
+
+Related films. Create movie class.
+
+Reviews.
+
+Allow users to upload actual images from their file explorer.
 
 ## Project Schedule
 
