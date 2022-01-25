@@ -46,7 +46,7 @@ pytz,
 djangorestframework-simplejwt,
 gunicorn,
 whitenoise,
-python-env,
+python-dotenv,
 dj-database-url,
 react-router-dom
 
