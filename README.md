@@ -65,18 +65,31 @@ react-router-dom
 ## API and Data Sample
 
 ```
+class Avatar(models.Model):
+    username = models.CharField(max_length=128)
+    email_address = models.EmailField()
+    home_address = models.CharField(max_length=128)
+    city = models.CharField(max_length=60)
+    state_province = models.CharField(max_length=30)
+    phone_number = PhoneField(blank=True, help_text='Contact phone number')
+
+    def __str__(self):
+        return self.username
+
 class Character(models.Model):
     name = models.CharField(max_length=128)
-    image_url = models.ImageField(upload_to='images/', max_length=1000, blank=True, null=True)
-    starting_bid = models.CharField(max_length=128)
+    image_url = models.URLField(max_length=200)
+    current_bid = models.CharField(max_length=128)
     start_date = forms.DateField(initial=datetime.date.today, label="Start Date")
     auction_duration = forms.ChoiceField(choices=INTERVAL_CHOICES, initial='one_day', label="Interval")
 
     def __str__(self):
         return self.name
 
+
 class Movie(models.Model):
     title = models.ForeignKey(Character, on_delete=models.CASCADE, related_name='titles')
+    directors = models.ManyToManyField('Director')
     publication_date = models.DateField()
     overview = models.CharField(max_length=1000)
 
