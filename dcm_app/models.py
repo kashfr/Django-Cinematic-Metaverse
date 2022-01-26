@@ -13,8 +13,9 @@ INTERVAL_CHOICES = (('one_day', '1 Day'), ('two_days', '2 Days'), ('three_days',
 
 
 class MetaverseAvatar(models.Model):
-    username = models.CharField(max_length=128)
-    email_address = models.EmailField()
+    username = models.CharField(
+        max_length=128)
+    email_address = models.EmailField(max_length=254)
 
 
 class Character(models.Model):
@@ -25,8 +26,8 @@ class Character(models.Model):
         initial=datetime.date.today, label="Start Date")
     auction_duration = forms.ChoiceField(
         choices=INTERVAL_CHOICES, initial='one_day', label="Interval")
-    # auction_duration = forms.ChoiceField(
-    #     choices=INTERVAL_CHOICES, initial='one_day', label="Interval")
+    metaverseavatar = models.ForeignKey(
+        MetaverseAvatar, on_delete=models.CASCADE, blank=True, null=True, related_name='metaverseavatar')
 
     def __str__(self):
         return self.name

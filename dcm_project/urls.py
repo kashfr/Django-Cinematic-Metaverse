@@ -26,6 +26,7 @@ router.register('metaverseavatar', views.MetaverseAvatarBookViewSet)
 router.register('character', views.CharacterViewSet)
 
 urlpatterns = [
+    path('', include('dcm_accounts.urls')),
     path('', include(router.urls)),
     path('api/token/', TokenObtainPairView.as_view()),
     path('api/token/refresh', TokenRefreshView.as_view()),
