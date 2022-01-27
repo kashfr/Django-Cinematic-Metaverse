@@ -11,12 +11,12 @@ from .models import MetaverseAvatar, Character
 class MetaverseAvatarBookViewSet(viewsets.ModelViewSet):
     queryset = MetaverseAvatar.objects.all()
     serializer_class = MetaverseAvatarSerializer
-    permissions_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, ]
     # permissions_classes = [permissions.AllowAny]  # testing
 
 
 class CharacterViewSet(viewsets.ModelViewSet):
     queryset = Character.objects.all()
     serializer_class = CharacterSerializer
-    permissions_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, ]
     # permissions_classes = [permissions.AllowAny]  # testing

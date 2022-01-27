@@ -17,6 +17,9 @@ class MetaverseAvatar(models.Model):
         max_length=128)
     email_address = models.EmailField(max_length=254)
 
+    def __str__(self):
+        return self.username
+
 
 class Character(models.Model):
     name = models.CharField(max_length=128)
