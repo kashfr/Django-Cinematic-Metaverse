@@ -18,6 +18,7 @@ dj-database-url = "*"
 python-dotenv = "*"
 django-phone-field = "*"
 ipython = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 

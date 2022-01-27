@@ -9,7 +9,7 @@ router = routers.DefaultRouter(trailing_slash=False)
 router.register('avatar', views.AvatarBookViewSet)
 router.register('nft', views.NFTViewSet)
 # router.register('nft', views.NFTFormViewSet)
-router.register('observations', views.ObservationViewSet)
+router.register('observation', views.ObservationViewSet)
 
 urlpatterns = [
     path('', include('dcm_accounts.urls')),

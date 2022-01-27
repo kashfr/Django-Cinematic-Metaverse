@@ -1,38 +1,25 @@
-import { useState, useEffect } from 'react'
-import './ProductCards.css'
-import ProductCard from '../ProductCard/ProductCard'
-import { getProducts } from '../../services/products'
+import { useState, useEffect } from "react";
+import "./ProductCards.css";
+import { getAvatars } from "../../services/avatars";
 
 const ProductCards = () => {
-  const [products, setProducts] = useState([])
+  const [avatars, setAvatars] = useState([]);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const allProducts = await getProducts()
-      setProducts(allProducts)
-    }
-    fetchProducts()
-  }, [])
-
-  const CARDS = products
-    .reverse()
-    .map((product, index) =>
-      index < 8 ? (
-        <ProductCard
-          _id={product._id}
-          name={product.name}
-          imgURL={product.imgURL}
-          key={index}
-        />
-      ) : null
-    )
+    const fetchAvatars = async () => {
+      const allAvatars = await getAvatars();
+      setAvatars(allAvatars);
+    };
+    fetchAvatars();
+  }, []);
 
   return (
-    <div className='product-cards'>
-      <div className='latest'>LATEST</div>
-      <div className='cards'>{CARDS}</div>
+    <div>
+      {avatars.map((avatar) => (
+        <p>{avatar.username}</p>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default ProductCards
+export default ProductCards;
