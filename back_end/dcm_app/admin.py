@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import MetaverseAvatar, Character
+from .models import Avatar, NFT
 
 # Register your models here.
-admin.site.register(MetaverseAvatar)
-admin.site.register(Character)
-# admin.site.register([MetaverseAvatar, Character])
+admin.site.register(Avatar)
+admin.site.register(NFT)
+# admin.site.register([Avatar, NFT])

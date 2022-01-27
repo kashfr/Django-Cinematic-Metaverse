@@ -12,7 +12,7 @@ INTERVAL_CHOICES = (('one_day', '1 Day'), ('two_days', '2 Days'), ('three_days',
 
 # Create your models here.
 
-class MetaverseAvatar(models.Model):
+class Avatar(models.Model):
     username = models.CharField(
         max_length=128)
     email_address = models.EmailField(max_length=254)
@@ -21,7 +21,7 @@ class MetaverseAvatar(models.Model):
         return self.username
 
 
-class Character(models.Model):
+class NFT(models.Model):
     name = models.CharField(max_length=128)
     image_url = models.URLField(max_length=200)
     current_bid = models.CharField(max_length=128)
@@ -29,8 +29,8 @@ class Character(models.Model):
         initial=datetime.date.today, label="Start Date")
     auction_duration = forms.ChoiceField(
         choices=INTERVAL_CHOICES, initial='one_day', label="Interval")
-    metaverseavatar = models.ForeignKey(
-        MetaverseAvatar, on_delete=models.CASCADE, blank=True, null=True, related_name='metaverseavatar')
+    avatar = models.ForeignKey(
+        Avatar, on_delete=models.CASCADE, blank=True, null=True, related_name='avatar')
 
     def __str__(self):
         return self.name
