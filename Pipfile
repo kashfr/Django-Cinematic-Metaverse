@@ -4,20 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
-psycopg2-binary = "*"
-pillow = "*"
-django-extensions = "*"
-autopep8 = "*"
-djangorestframework = "*"
-pytz = "*"
-djangorestframework-simplejwt = "*"
-gunicorn = "*"
-whitenoise = "*"
-dj-database-url = "*"
-python-dotenv = "*"
-django-phone-field = "*"
-ipython = "*"
 
 [dev-packages]
 
