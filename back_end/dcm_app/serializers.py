@@ -7,8 +7,8 @@ class MetaverseAvatarSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = MetaverseAvatar
-        # fields = '__all__'
-        fields = ['username', 'email_address']
+        fields = '__all__'
+        # fields = ['username', 'email_address']
 
 
 class CharacterSerializer(serializers.ModelSerializer):
