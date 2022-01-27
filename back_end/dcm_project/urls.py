@@ -6,8 +6,10 @@ from rest_framework import routers
 from dcm_app import views
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register('metaverseavatar', views.MetaverseAvatarBookViewSet)
-router.register('character', views.CharacterViewSet)
+router.register('avatar', views.AvatarBookViewSet)
+router.register('nft', views.NFTViewSet)
+# router.register('nft', views.NFTFormViewSet)
+router.register('observations', views.ObservationViewSet)
 
 urlpatterns = [
     path('', include('dcm_accounts.urls')),
