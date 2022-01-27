@@ -24,8 +24,7 @@ DEBUG = True
 # ALLOWED_HOSTS = ['*']
 
 ALLOWED_HOSTS = [
-    'django-cinematic-metaverse.herokuapp.com',
-    'localhost',
+    'django-cinematic-metaverse.herokuapp.com', 'localhost', '127.0.0.1',
 ]
 
 

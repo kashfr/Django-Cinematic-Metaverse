@@ -17,6 +17,7 @@ router.register('character', views.CharacterViewSet)
 urlpatterns = [
     path('', include('dcm_accounts.urls')),
     path('', include(router.urls)),
+    path('admin/', admin.site.urls),
     # path('api/token/', TokenObtainPairView.as_view()),
     # path('api/token/refresh', TokenRefreshView.as_view()),
 ]

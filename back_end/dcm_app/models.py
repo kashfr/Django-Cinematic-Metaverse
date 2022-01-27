@@ -9,8 +9,8 @@ INTERVAL_CHOICES = (('one_day', '1 Day'), ('two_days', '2 Days'), ('three_days',
                                                                                                       '5 Weeks'), ('six_weeks', '6 Weeks'), ('eight_weeks', '8 Weeks'), ('twelve_weeks', '12 Weeks')
                     )
 
-# Create your models here.
 
+# Create your models here.
 
 class MetaverseAvatar(models.Model):
     username = models.CharField(
