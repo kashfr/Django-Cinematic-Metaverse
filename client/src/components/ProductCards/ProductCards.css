@@ -1,0 +1,28 @@
+.product-cards {
+    width: 90vw;
+    padding: 50px;
+    margin: 50px;
+}
+
+.cards {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.latest {
+    font-size: 20px;
+    color: rgb(56, 55, 55);
+    padding: 10px;
+    margin-top: 40px;
+}
+
+@media (max-width: 500px) {
+    .product-cards {
+        width: 90vw;
+        padding: 20px;
+        margin: 0px;
+    }
+    .cards {
+        margin: 0 -20px;
+    }
+}

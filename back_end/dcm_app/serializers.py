@@ -1,19 +1,24 @@
 from rest_framework import serializers
-from .models import MetaverseAvatar, Character
+from .models import Avatar, NFT, Observation
 
 
-class MetaverseAvatarSerializer(serializers.ModelSerializer):
+class AvatarSerializer(serializers.ModelSerializer):
     # characters = serializers.StringRelatedField(many=True)
 
     class Meta:
-        model = MetaverseAvatar
+        model = Avatar
         fields = '__all__'
-        # fields = ['username', 'email_address']
 
 
-class CharacterSerializer(serializers.ModelSerializer):
+class NFTSerializer(serializers.ModelSerializer):
     # avatars = serializers.HyperlinkedIdentityField(view_name='avatar-detail', read_only=True)
 
     class Meta:
-        model = Character
+        model = NFT
+        fields = '__all__'
+
+
+class ObservationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Observation
         fields = '__all__'
