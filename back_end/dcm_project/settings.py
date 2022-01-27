@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 IS_PRODUCTION = os.getenv('PRODUCTION') == 'True'
-
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +24,7 @@ DEBUG = True
 # ALLOWED_HOSTS = ['*']
 
 ALLOWED_HOSTS = [
-    'https://django-cinematic-metaverse.herokuapp.com/',
+    'django-cinematic-metaverse.herokuapp.com',
     'localhost',
 ]
 
@@ -92,7 +91,7 @@ else:
             'USER': 'django_cinematic_metaverse_admin',
             'PASSWORD': 'password',
             'HOST': 'localhost',
-            'PORT': '5432',
+            # 'PORT': '5432',
         }
     }
 
