@@ -11,12 +11,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import os
-import dj_database_url
 from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
 load_dotenv()
-
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,10 +28,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-# ALLOWED_HOSTS = [
-#     'https://django-cinematic-metaverse.herokuapp.com/', 'localhost']
+ALLOWED_HOSTS = [
+    'https://django-cinematic-metaverse.herokuapp.com/', 'localhost']
 
 
 # Application definition
@@ -86,18 +82,14 @@ WSGI_APPLICATION = 'dcm_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'django_cinematic_metaverse',
-#         'USER': 'django_cinematic_metaverse_admin',
-#         'PASSWORD': 'password',
-#         'HOST': 'localhost',
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django_cinematic_metaverse',
+        'USER': 'django_cinematic_metaverse_admin',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+    }
 }
 
 
