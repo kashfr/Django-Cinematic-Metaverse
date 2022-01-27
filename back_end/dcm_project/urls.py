@@ -6,7 +6,7 @@ from rest_framework import routers
 from dcm_app import views
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register('avatar', views.AvatarBookViewSet)
+router.register('avatars', views.AvatarBookViewSet)
 router.register('nft', views.NFTViewSet)
 # router.register('nft', views.NFTFormViewSet)
 router.register('observation', views.ObservationViewSet)

@@ -11,6 +11,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/avatars" element={<ProductCards />} />
+        <Route path="/avatars" element={<ProductCards />} />
+        <Route path="/avatars/:id" element={<ProductCards />} />
       </Routes>
     </div>
   );

@@ -16,7 +16,10 @@ const ProductCards = () => {
   return (
     <div>
       {avatars.map((avatar) => (
-        <p>{avatar.username}</p>
+        <div>
+          <p>{avatar.username}</p>
+          <p>{avatar.email_address}</p>
+        </div>
       ))}
     </div>
   );

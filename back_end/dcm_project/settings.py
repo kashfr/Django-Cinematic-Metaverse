@@ -183,7 +183,7 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    'https://cinematic-metaverse.herokuapp.com'
+    'https://cinematic-metaverse.herokuapp.com',
     'http://localhost:3000',
     'http://localhost:8000',
     'http://localhost:8001',
