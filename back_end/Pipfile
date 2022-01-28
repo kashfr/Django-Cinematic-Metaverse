@@ -19,6 +19,7 @@ python-dotenv = "*"
 django-phone-field = "*"
 ipython = "*"
 django-cors-headers = "*"
+"manage.py" = "*"
 
 [dev-packages]
 

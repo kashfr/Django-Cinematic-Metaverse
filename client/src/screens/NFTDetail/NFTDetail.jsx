@@ -1,90 +1,86 @@
-import { useState, useEffect } from 'react'
-import './ProductDetail.css'
-import { Layout, ReviewForm, Reviews } from '../../components'
-import { getProduct, deleteProduct, updateProduct } from '../../services/products'
-import { useParams, Link } from 'react-router-dom'
-import StarRating from 'star-rating-react'
+import { useState, useEffect } from "react";
+import "./NFTDetail.css";
+import { Layout, ReviewForm, Reviews } from "../../components";
+import { getNFT, deleteNFT, updateNFT } from "../../services/nfts";
+import { useParams, Link } from "react-router-dom";
+import StarRating from "star-rating-react";
 
-const ProductDetail = (props) => {
-  const [product, setProduct] = useState({
-    name: '',
-    description: '',
-    imgURL: '',
-    price: '',
+const NFTDetail = (props) => {
+  const [nft, setNFT] = useState({
+    name: "",
+    description: "",
+    imgURL: "",
+    price: "",
     reviews: [],
-  })
+  });
   const [review, setReview] = useState({
-    author: '',
-    rating: '',
-    description: '',
-  })
-  const [isLoaded, setLoaded] = useState(false)
-  const { id } = useParams()
+    author: "",
+    rating: "",
+    description: "",
+  });
+  const [isLoaded, setLoaded] = useState(false);
+  const { id } = useParams();
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      const product = await getProduct(id)
-      setProduct(product)
-      setLoaded(true)
-    }
-    fetchProduct()
-  }, [id])
+    const fetchNFT = async () => {
+      const nft = await getNFT(id);
+      setNFT(nft);
+      setLoaded(true);
+    };
+    fetchNFT();
+  }, [id]);
 
   const handleChange = (event) => {
-    const { name, value } = event.target
+    const { name, value } = event.target;
     setReview({
       ...review,
       [name]: value,
-    })
-  }
+    });
+  };
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    product.reviews.push(review)
-    setProduct(product)
-    await updateProduct(id, product)
-  }
+    event.preventDefault();
+    nft.reviews.push(review);
+    setNFT(nft);
+    await updateNFT(id, nft);
+  };
 
   if (!isLoaded) {
-    return <h1>Loading...</h1>
+    return <h1>Loading...</h1>;
   }
 
   return (
     <Layout user={props.user}>
-      <div className='product-detail'>
-        <img
-          className='product-detail-image'
-          src={product.imgURL}
-          alt={product.name}
-        />
-        <div className='detail'>
-          <div className='name'>{product.name}</div>
-          <div className='seller'>by {product.userId.username}</div>
-          <div className='rating'>
+      <div className="nft-detail">
+        <img className="nft-detail-image" src={nft.imgURL} alt={nft.name} />
+        <div className="detail">
+          <div className="name">{nft.name}</div>
+          <div className="seller">by {nft.userId.username}</div>
+          <div className="rating">
             <StarRating
-              size={product.rating}
-              value={product.rating}
+              size={nft.rating}
+              value={nft.rating}
               onChange={function (val) {
-                console.log(val)
+                console.log(val);
               }}
             />
           </div>
-          <div className='price'>{`$${product.price}`}</div>
-          <div className='description'>{product.description}</div>
-          <div className='button-container'>
-            <Link className='edit-button' to={`/products/${product._id}/edit`}>
+          <div className="price">{`$${nft.price}`}</div>
+          <div className="description">{nft.description}</div>
+          <div className="button-container">
+            <Link className="edit-button" to={`/nfts/${nft._id}/edit`}>
               Edit
             </Link>
             <button
-              className='delete-button'
-              onClick={() => deleteProduct(product._id)}
+              className="delete-button"
+              onClick={() => deleteNFT(nft._id)}
             >
               Delete
             </button>
           </div>
         </div>
       </div>
-      <div className='reviews-wrapper'>
+      <div className="reviews-wrapper">
         <ReviewForm
           author={review.author}
           rating={review.rating}
@@ -92,10 +88,10 @@ const ProductDetail = (props) => {
           onSubmit={handleSubmit}
           onChange={handleChange}
         />
-        <Reviews reviews={product.reviews} />
+        <Reviews reviews={nft.reviews} />
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default ProductDetail
+export default NFTDetail;

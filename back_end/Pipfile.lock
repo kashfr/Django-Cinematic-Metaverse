@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9ad1b06c11b68a97d7c493748e6e62e786162cee6de1729c683676bdfcde6bf8"
+            "sha256": "6085590c8731d2bdacb23a4c9a0325d10dcc5c7a007049a7226e78d04f8f2e4c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -164,6 +164,13 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==0.18.1"
+        },
+        "manage.py": {
+            "hashes": [
+                "sha256:3879bbe304794f36f98fd04af4c9f1ef2b8640fc76ee25572c591beef7cfb1c1"
+            ],
+            "index": "pypi",
+            "version": "==0.2.10"
         },
         "matplotlib-inline": {
             "hashes": [
@@ -440,7 +447,7 @@
                 "sha256:4ca091dea149f945ec56afb48dae714f21e8692ef22a395223bcd328961b6a0e",
                 "sha256:7f001e5ac290a0c0401508864c7ec868be4e701886d5b573a9528ed3973d9d3b"
             ],
-            "markers": "python_version >= '3.10'",
+            "markers": "python_version >= '3.6'",
             "version": "==4.0.1"
         },
         "wcwidth": {

@@ -1,14 +1,12 @@
-import './Home.css'
-import { Layout, ProductCards } from '../../components'
+import "./Home.css";
+import { Layout, NFTCards } from "../../components";
 
-const Home = (props) => {
+export const Home = () => {
   return (
     <Layout user={props.user}>
-      <div className='home'>
-        <ProductCards />
+      <div className="home">
+        <NFTCards />
       </div>
     </Layout>
-  )
-}
-
-export default Home
+  );
+};

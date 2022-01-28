@@ -1,5 +1,5 @@
-from django import forms
-from .models import NFT
+# from django import forms
+# from .models import NFT
 
 
 # class NFTForm(forms.ModelForm):

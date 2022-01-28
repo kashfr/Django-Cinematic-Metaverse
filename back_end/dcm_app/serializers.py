@@ -11,6 +11,8 @@ class AvatarSerializer(serializers.ModelSerializer):
 
 
 class NFTSerializer(serializers.ModelSerializer):
+    snippets = serializers.PrimaryKeyRelatedField(
+        many=True, queryset=Avatar.objects.all())
     # avatars = serializers.HyperlinkedIdentityField(view_name='avatar-detail', read_only=True)
 
     class Meta:

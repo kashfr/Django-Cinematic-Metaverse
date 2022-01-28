@@ -1,4 +1,5 @@
 import datetime
+import django.utils.timezone
 from datetime import timedelta
 from django.db import models
 
@@ -21,15 +22,15 @@ class Avatar(models.Model):
 
 
 class NFT(models.Model):
+    avatar = models.ForeignKey(
+        Avatar, on_delete=models.CASCADE, blank=True, null=True, related_name='avatar')
     name = models.CharField(max_length=128)
     image_url = models.URLField(max_length=200)
     current_bid = models.CharField(max_length=128)
-    # start_date = models.DateField(
-    #     initial=datetime.date.today, label="Start Date")
-    # auction_duration = models.ChoiceField(
-    #     choices=INTERVAL_CHOICES, initial='one_day', label="Interval")
-    avatar = models.ForeignKey(
-        Avatar, on_delete=models.CASCADE, blank=True, null=True, related_name='avatar')
+    start_date = models.DateField(
+        auto_now_add=False, default=datetime.date.today)
+    auction_duration = models.DurationField(
+        choices=INTERVAL_CHOICES, null=True)
 
     def __str__(self):
         return self.name

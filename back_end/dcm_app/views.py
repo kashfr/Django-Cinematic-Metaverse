@@ -31,3 +31,4 @@ class NFTViewSet(viewsets.ModelViewSet):
 class ObservationViewSet(viewsets.ModelViewSet):
     queryset = Observation.objects.all()
     serializer_class = ObservationSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]

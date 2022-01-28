@@ -1,22 +1,21 @@
-import React from 'react'
-import StarRating from 'star-rating-react'
-import './Reviews.css'
+import React from "react";
+import StarRating from "star-rating-react";
+import "./Observations.css";
 
-const Reviews = (props) => {
+export const Observations = (props) => {
+  const observationsJSX = props.observations.map((observation, index) => (
+    <div className="nft-observation" key={index}>
+      <h1>{observation.author}</h1>
+      <StarRating
+        size={observation.rating}
+        value={observation.rating}
+        onChange={function (val) {
+          console.log(val);
+        }}
+      />
+      <p>{observation.description}</p>
+    </div>
+  ));
 
-    const reviewsJSX = props.reviews.map((review, index) =>
-        <div className="product-review" key={index}>
-            <h1>{review.author}</h1>
-            <StarRating size={review.rating} value={review.rating} onChange={ function(val) { console.log(val) }} />
-            <p>{review.description}</p>
-        </div>
-    )
-
-    return (
-        <div className="product-reviews">
-            { reviewsJSX}
-        </div>
-    )
-}
-
-export default Reviews
+  return <div className="nft-observations">{observationsJSX}</div>;
+};
