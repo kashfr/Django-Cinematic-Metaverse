@@ -33,8 +33,8 @@ class NFT(models.Model):
     current_bid = models.CharField(max_length=128)
     start_date = models.DateField(
         auto_now_add=False, default=datetime.date.today)
-    auction_duration = models.DurationField(
-        choices=INTERVAL_CHOICES, null=True)
+    # auction_duration = models.DurationField(
+    #     choices=INTERVAL_CHOICES, null=True)
 
     def __str__(self):
         return self.name
