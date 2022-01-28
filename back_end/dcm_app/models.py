@@ -3,6 +3,10 @@ import django.utils.timezone
 from datetime import timedelta
 from django.db import models
 
+now = datetime.datetime.now()
+now + timedelta(days=3)
+three_days = now + timedelta(days=3)
+
 
 INTERVAL_CHOICES = (('one_day', '1 Day'), ('two_days', '2 Days'), ('three_days', '3 Days'), ('four_days', '4 Days'), ('five_days', '5 Days'), ('six_days', '6 Days'), ('one-week', '1 Week'),
                     ('two_weeks', '2 Weeks'), ('three_weeks', '3 Weeks'), ('four_weeks', '4 Weeks'), ('five_weeks',
