@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import "./NFTDetail.css";
-import { Layout, ReviewForm, Reviews } from "../../components";
+// import { Layout, ObservationForm, Observations } from "../../components";
 import { getNFT, deleteNFT, updateNFT } from "../../services/nfts";
 import { useParams, Link } from "react-router-dom";
-import StarRating from "star-rating-react";
+import { Observations } from "../../components/Observations/Observations";
+import ObservationForm from "../../components/ObservationForm/ObservationForm";
+// import StarRating from "star-rating-react";
 
 const NFTDetail = (props) => {
   const [nft, setNFT] = useState({
@@ -50,22 +52,23 @@ const NFTDetail = (props) => {
   }
 
   return (
-    <Layout user={props.user}>
+    // <Layout user={props.user}>
+    <>
       <div className="nft-detail">
         <img className="nft-detail-image" src={nft.imgURL} alt={nft.name} />
         <div className="detail">
           <div className="name">{nft.name}</div>
           <div className="seller">by {nft.userId.username}</div>
           <div className="rating">
-            <StarRating
+            {/* <StarRating
               size={nft.rating}
               value={nft.rating}
               onChange={function (val) {
                 console.log(val);
               }}
-            />
+            /> */}
           </div>
-          <div className="price">{`$${nft.price}`}</div>
+          <div className="price">{`$${nft.current_price}`}</div>
           <div className="description">{nft.description}</div>
           <div className="button-container">
             <Link className="edit-button" to={`/nfts/${nft._id}/edit`}>
@@ -81,16 +84,17 @@ const NFTDetail = (props) => {
         </div>
       </div>
       <div className="reviews-wrapper">
-        <ReviewForm
+        <ObservationForm
           author={review.author}
           rating={review.rating}
           description={review.description}
           onSubmit={handleSubmit}
           onChange={handleChange}
         />
-        <Reviews reviews={nft.reviews} />
+        <Observations observations={nft.reviews} />
       </div>
-    </Layout>
+    </>
+    // </Layout>
   );
 };
 

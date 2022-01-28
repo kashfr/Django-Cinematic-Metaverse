@@ -187,9 +187,9 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
 
-CORS_ALLOW_CREDENTIALS = True
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ORIGIN_WHITELIST = ('*')
+# CORS_ALLOW_CREDENTIALS = True
+# CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_WHITELIST = ('*')
 
 CORS_ALLOWED_ORIGINS = [
     'https://cinematic-metaverse.herokuapp.com',
@@ -219,11 +219,11 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
 ]
 
-CORS_ALLOWED_ORIGIN_REGEXES = [
-    r"^https://\w+\.domain\.com$",
-]
+# CORS_ALLOWED_ORIGIN_REGEXES = [
+#     r"^https://\w+\.domain\.com$",
+# ]
 
-CORS_URLS_REGEX = r"^/api/.*$"
+# CORS_URLS_REGEX = r"^/api/.*$"
 
 MEDIA_URL = '/media/'
 
