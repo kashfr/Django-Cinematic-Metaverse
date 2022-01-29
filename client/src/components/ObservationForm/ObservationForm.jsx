@@ -3,15 +3,15 @@ import "./ObservationForm.css";
 
 const ObservationForm = ({
   author,
-  rating,
+  // rating,
   description,
   onChange,
   onSubmit,
 }) => {
   return (
-    <form className="review-create-form" onSubmit={(e) => onSubmit(e)}>
+    <form className="observation-create-form" onSubmit={(e) => onSubmit(e)}>
       <input
-        className="review-input-author"
+        className="observation-input-author"
         placeholder="Name"
         value={author}
         name="author"
@@ -19,24 +19,24 @@ const ObservationForm = ({
         autoFocus
         onChange={(e) => onChange(e)}
       />
-      <input
-        className="review-input-rating"
+      {/* <input
+        className="observation-input-rating"
         placeholder="Rating (1-5)"
         value={rating}
         name="rating"
         required
         onChange={(e) => onChange(e)}
-      />
+      /> */}
       <textarea
-        className="review-textarea-description"
+        className="observation-textarea-description"
         rows={10}
-        placeholder="Write your review..."
+        placeholder="Write your observation..."
         value={description}
         name="description"
         required
         onChange={(e) => onChange(e)}
       />
-      <button type="submit" className="review-submit-button">
+      <button type="submit" className="observation-submit-button">
         Submit
       </button>
     </form>

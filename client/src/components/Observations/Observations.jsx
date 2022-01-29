@@ -2,7 +2,7 @@ import React from "react";
 // import StarRating from "star-rating-react";
 import "./Observations.css";
 
-export const Observations = (props) => {
+const Observations = (props) => {
   const observationsJSX = props.observations.map((observation, index) => (
     <div className="nft-observation" key={index}>
       <h1>{observation.author}</h1>
@@ -19,3 +19,5 @@ export const Observations = (props) => {
 
   return <div className="nft-observations">{observationsJSX}</div>;
 };
+
+export default Observations;

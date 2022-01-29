@@ -7,9 +7,9 @@ import { createNFT } from "../../services/nfts";
 const NFTCreate = (props) => {
   const [nft, setNFT] = useState({
     name: "",
-    description: "",
-    imgURL: "",
-    price: "",
+    image_url: "",
+    current_price: "",
+    start_date: "",
   });
 
   const [isCreated, setCreated] = useState(false);
@@ -45,13 +45,21 @@ const NFTCreate = (props) => {
         />
         <input
           className="input-price"
-          placeholder="Price"
-          value={nft.price}
+          placeholder="Starting Bid"
+          value={nft.current_bid}
           name="price"
           required
           onChange={handleChange}
         />
-        <textarea
+        <input
+          className="start-date"
+          placeholder="Start Date"
+          value={nft.start_date}
+          name="start_date"
+          required
+          onChange={handleChange}
+        />
+        {/* <textarea
           className="textarea-description"
           rows={10}
           placeholder="Description"
@@ -59,11 +67,11 @@ const NFTCreate = (props) => {
           name="description"
           required
           onChange={handleChange}
-        />
+        /> */}
         <input
           className="input-image-link"
           placeholder="Image Link"
-          value={nft.imgURL}
+          value={nft.image_url}
           name="imgURL"
           required
           onChange={handleChange}

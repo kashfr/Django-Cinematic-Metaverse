@@ -1,7 +1,7 @@
 import api from "./apiConfig";
 import jwtDecode from "jwt-decode";
 
-export const signUp = async (credentials) => {
+export const ascend = async (credentials) => {
   try {
     const resp = await api.post("/sign-up", credentials);
     localStorage.setItem("token", resp.data.token);
@@ -12,9 +12,9 @@ export const signUp = async (credentials) => {
   }
 };
 
-export const signIn = async (credentials) => {
+export const plugIn = async (credentials) => {
   try {
-    const resp = await api.post("/sign-in", credentials);
+    const resp = await api.post("/plug-in", credentials);
     localStorage.setItem("token", resp.data.token);
     const user = jwtDecode(resp.data.token);
     return user;
@@ -23,7 +23,7 @@ export const signIn = async (credentials) => {
   }
 };
 
-export const signOut = async () => {
+export const unplug = async () => {
   try {
     localStorage.removeItem("token");
     return true;
@@ -50,9 +50,9 @@ export const verifyUser = async () => {
   return false;
 };
 
-export const getUserProduct = async (userId, productId) => {
+export const getUserNFT = async (userId, nftId) => {
   try {
-    const response = await api.get(`/users/${userId}/products/${productId}`);
+    const response = await api.get(`/users/${userId}/nfts/${nftId}`);
     return response.data;
   } catch (error) {
     throw error;

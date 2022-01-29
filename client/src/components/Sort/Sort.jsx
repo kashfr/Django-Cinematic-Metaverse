@@ -1,22 +1,31 @@
-import './Sort.css'
+import "./Sort.css";
 
 const Sort = (props) => {
+  const handleSort = (event) => {
+    props.handleSort(event.target.value);
+  };
 
-    const handleSort = (event) => {
-        props.handleSort(event.target.value)
-    }
+  return (
+    <form className="sort-container" onSubmit={props.handleSubmit}>
+      <label htmlFor="sort">Sort By:</label>
+      <select className="sort" onChange={handleSort}>
+        <option className="option" value="name-ascending">
+          &nbsp; Alphabetically, A-Z &nbsp;
+        </option>
+        <option value="name-descending">
+          &nbsp; Alphabetically, Z-A &nbsp;
+        </option>
+        <option value="price-ascending">
+          &nbsp; Price, low to high &nbsp;
+        </option>
+        <option value="price-descending">
+          &nbsp; Price, high to low &nbsp;
+        </option>
+        <option value="time-ascending">&nbsp; Time, low to high &nbsp;</option>
+        <option value="time-descending">&nbsp; Time, high to low &nbsp;</option>
+      </select>
+    </form>
+  );
+};
 
-    return (
-        <form className="sort-container" onSubmit={props.handleSubmit}>
-            <label htmlFor="sort">SORT BY:</label>
-            <select className="sort" onChange={handleSort}>
-                <option className="option" value="name-ascending" >&nbsp; Alphabetically, A-Z &nbsp;</option>
-                <option value="name-descending">&nbsp; Alphabetically, Z-A &nbsp;</option>
-                <option value="price-ascending">&nbsp; Price, low to high &nbsp;</option>
-                <option value="price-descending">&nbsp; Price, high to low &nbsp;</option>
-            </select>
-        </form>
-    )
-}
-
-export default Sort
+export default Sort;

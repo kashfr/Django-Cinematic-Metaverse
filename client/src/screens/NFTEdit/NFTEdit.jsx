@@ -45,13 +45,13 @@ const NFTEdit = (props) => {
     <Layout user={props.user}>
       <div className="nft-edit">
         <div className="image-container">
-          <img className="edit-nft-image" src={nft.imgURL} alt={nft.name} />
+          <img className="edit-nft-image" src={nft.image_url} alt={nft.name} />
           <form onSubmit={handleSubmit}>
             <input
               className="edit-input-image-link"
               placeholder="Image Link"
-              value={nft.imgURL}
-              name="imgURL"
+              value={nft.image_url}
+              name="image_url"
               required
               onChange={handleChange}
             />
@@ -70,12 +70,12 @@ const NFTEdit = (props) => {
           <input
             className="input-price"
             placeholder="Price"
-            value={nft.price}
+            value={nft.current_bid}
             name="price"
             required
             onChange={handleChange}
           />
-          <textarea
+          {/* <textarea
             className="textarea-description"
             rows={10}
             cols={78}
@@ -84,7 +84,7 @@ const NFTEdit = (props) => {
             name="description"
             required
             onChange={handleChange}
-          />
+          /> */}
           <button type="submit" className="save-button">
             Save
           </button>

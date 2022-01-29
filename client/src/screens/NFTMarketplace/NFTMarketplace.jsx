@@ -2,7 +2,14 @@ import { useState, useEffect } from "react";
 import "./NFTMarketplace.css";
 
 import { Layout, NFT, Search, Sort } from "../../components";
-import { AZ, ZA, lowestFirst, highestFirst } from "../../utils/sort";
+import {
+  AZ,
+  ZA,
+  lowestFirst,
+  highestFirst,
+  endingFirst,
+  endingLast,
+} from "../../utils/sort";
 import { getNFTs } from "../../services/nfts";
 
 export const NFTMarketplace = (props) => {
@@ -38,6 +45,12 @@ export const NFTMarketplace = (props) => {
       case "price-descending":
         setSearchResult(highestFirst(searchResult));
         break;
+      case "time-ascending":
+        setSearchResult(endingFirst(searchResult));
+        break;
+      case "time-descending":
+        setSearchResult(endingLast(searchResult));
+        break;
       default:
         break;
     }
@@ -68,8 +81,8 @@ export const NFTMarketplace = (props) => {
             <NFT
               _id={nft._id}
               name={nft.name}
-              imgURL={nft.imgURL}
-              price={nft.price}
+              imgURL={nft.image_url}
+              price={nft.current_bid}
               key={index}
             />
           );

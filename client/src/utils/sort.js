@@ -14,6 +14,10 @@ const compareKey = (key) => (a, b) => {
 export const AZ = (arr) => arr.sort(compareKey("name"));
 export const ZA = (arr) => arr.sort(compareKey("name")).reverse();
 export const lowestFirst = (arr) =>
-  arr.sort((a, b) => parseInt(a.price) - parseInt(b.price));
+  arr.sort((a, b) => parseInt(a.current_bid) - parseInt(b.current_bid));
 export const highestFirst = (arr) =>
-  arr.sort((a, b) => parseInt(b.price) - parseInt(a.price));
+  arr.sort((a, b) => parseInt(b.current_bid) - parseInt(a.current_bid));
+export const endingFirst = (arr) =>
+  arr.sort((a, b) => parseInt(a.start_date) - parseInt(b.start_date));
+export const endingLast = (arr) =>
+  arr.sort((a, b) => parseInt(b.start_date) - parseInt(a.start_date));

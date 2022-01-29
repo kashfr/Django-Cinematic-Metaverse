@@ -1,40 +1,56 @@
 import "./App.css";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+
 import Home from "./screens/Home/Home.jsx";
-import AvatarProfile from "./components/AvatarProfile/AvatarProfile";
+import NFTMarketplace from "./screens/NFTMarketplace/NFTMarketplace";
+import NFTCreate from "./screens/NFTCreate/NFTCreate";
+import NFTEdit from "./screens/NFTEdit/NFTEdit";
 import NFTDetail from "./screens/NFTDetail/NFTDetail";
-// import NFTCreate from "./screens/NFTCreate/NFTCreate";
-// import NFTEdit from "./screens/NFTEdit/NFTEdit";
-// import NFTDetail from "./screens/NFTDetail/NFTDetail";
 
-// import { Home } from "./screens/Home/Home";
-// import SignUp from "./screens/SignUp/SignUp";
-// import SignIn from "./screens/SignIn/SignIn";
-// import SignOut from "./screens/SignOut/SignOut";
+import AvatarProfile from "./components/AvatarProfile/AvatarProfile";
 
-// const App = () => {
-// 	const [user, setUser] = useState(null);
+import { verifyUser } from "./services/users";
+import SignUp from "./screens/Ascend/Ascend";
+import SignIn from "./screens/PlugIn/PlugIn";
+import SignOut from "./screens/Unplug/Unplug";
 
-// 	useEffect(() => {
-// 		const fetchUser = async () => {
-// 			const user = await verifyUser();
-// 			user ? setUser(user) : setUser(null);
-// 		};
-// 		fetchUser();
-// 	}, []);
+const App = () => {
+  const [user, setUser] = useState(null);
 
-function App() {
+  useEffect(() => {
+    const fetchUser = async () => {
+      const user = await verifyUser();
+      user ? setUser(user) : setUser(null);
+    };
+    fetchUser();
+  }, []);
+
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Home />} />
+      <Switch>
+        <Route path="/" element={<Home user={user} />} />
+        <Route path="/sign-up" element={<SignUp setUser={setUser} />} />
+        <Route path="/sign-in" element={<SignIn setUser={setUser} />} />
+        <Route path="/sign-out" element={<SignOut setUser={setUser} />} />
+
+        <Route path="/add-nft">
+          {user ? <NFTCreate user={user} /> : <Redirect to="/sign-up" />}
+        </Route>
+        <Route path="/nfts" element={<NFTMarketplace user={user} />} />
+        <Route
+          path="nfts/:id/edit"
+          element={user ? <NFTEdit user={user} /> : <Redirect to="/sign-up" />}
+        />
+        <Route exact path="/nfts/:id">
+          <NFTDetail user={user} />
+        </Route>
+
         <Route path="/avatars" element={<AvatarProfile />} />
-        {/* <Route path="/nfts" element={<Home />} /> */}
         <Route path="/avatars/:id" element={<AvatarProfile />} />
-        <Route path="/nfts/:id" element={<NFTDetail />} />
-      </Routes>
+      </Switch>
     </div>
   );
-}
+};
 
 export default App;

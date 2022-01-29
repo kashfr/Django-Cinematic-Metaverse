@@ -29,7 +29,7 @@ class NFT(models.Model):
     avatar = models.ForeignKey(
         Avatar, on_delete=models.CASCADE, blank=True, null=True, related_name='avatar')
     name = models.CharField(max_length=128)
-    image_url = models.CharField(max_length=200)
+    image_url = models.URLField(max_length=200)
     current_bid = models.CharField(max_length=128)
     start_date = models.DateField(
         auto_now_add=False, default=datetime.date.today)

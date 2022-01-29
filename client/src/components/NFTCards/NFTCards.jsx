@@ -14,7 +14,7 @@ export const NFTCards = () => {
     fetchNFTs();
   }, []);
 
-  const Cards = nfts
+  const cards = nfts
     .reverse()
     .map((nft, index) =>
       index < 8 ? (
@@ -29,8 +29,8 @@ export const NFTCards = () => {
 
   return (
     <div className="nft-cards">
-      <div className="latest">Ending Soon..</div>
-      <div className="cards">{Cards}</div>
+      <div className="oldest">Ending Soon..</div>
+      <div className="cards">{cards}</div>
     </div>
   );
 };
