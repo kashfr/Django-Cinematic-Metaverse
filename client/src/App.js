@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 
 import Home from "./screens/Home/Home.jsx";
 import NFTMarketplace from "./screens/NFTMarketplace/NFTMarketplace";
@@ -16,6 +16,7 @@ import SignIn from "./screens/PlugIn/PlugIn";
 import SignOut from "./screens/Unplug/Unplug";
 
 const App = () => {
+  // let navigate = useNavigate();
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -28,19 +29,19 @@ const App = () => {
 
   return (
     <div className="App">
-      <Switch>
+      <Routes>
         <Route path="/" element={<Home user={user} />} />
-        <Route path="/sign-up" element={<SignUp setUser={setUser} />} />
-        <Route path="/sign-in" element={<SignIn setUser={setUser} />} />
-        <Route path="/sign-out" element={<SignOut setUser={setUser} />} />
+        <Route path="/ascend" element={<SignUp setUser={setUser} />} />
+        <Route path="/plug-in" element={<SignIn setUser={setUser} />} />
+        <Route path="/unplug" element={<SignOut setUser={setUser} />} />
 
         <Route path="/add-nft">
-          {user ? <NFTCreate user={user} /> : <Redirect to="/sign-up" />}
+          {user ? <NFTCreate user={user} /> : <Navigate to="/ascend" />}
         </Route>
         <Route path="/nfts" element={<NFTMarketplace user={user} />} />
         <Route
           path="nfts/:id/edit"
-          element={user ? <NFTEdit user={user} /> : <Redirect to="/sign-up" />}
+          element={user ? <NFTEdit user={user} /> : <Navigate to="/ascend" />}
         />
         <Route exact path="/nfts/:id">
           <NFTDetail user={user} />
@@ -48,7 +49,7 @@ const App = () => {
 
         <Route path="/avatars" element={<AvatarProfile />} />
         <Route path="/avatars/:id" element={<AvatarProfile />} />
-      </Switch>
+      </Routes>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./NFTMarketplace.css";
 
-import { Layout, NFT, Search, Sort } from "../../components";
+import { Layout, NFT, Quest, Sort } from "../../components";
 import {
   AZ,
   ZA,
@@ -12,9 +12,9 @@ import {
 } from "../../utils/sort";
 import { getNFTs } from "../../services/nfts";
 
-export const NFTMarketplace = (props) => {
+const NFTMarketplace = (props) => {
   const [nfts, setNFTs] = useState([]);
-  const [searchResult, setSearchResult] = useState([]);
+  const [questResult, setQuestResult] = useState([]);
   const [applySort, setApplySort] = useState(false);
   const [sortType, setSortType] = useState("name-ascending");
 
@@ -22,7 +22,7 @@ export const NFTMarketplace = (props) => {
     const fetchNFTs = async () => {
       const allNFTs = await getNFTs();
       setNFTs(allNFTs);
-      setSearchResult(allNFTs);
+      setQuestResult(allNFTs);
     };
     fetchNFTs();
   }, []);
@@ -34,22 +34,22 @@ export const NFTMarketplace = (props) => {
 
     switch (type) {
       case "name-ascending":
-        setSearchResult(AZ(searchResult));
+        setQuestResult(AZ(questResult));
         break;
       case "name-descending":
-        setSearchResult(ZA(searchResult));
+        setQuestResult(ZA(questResult));
         break;
       case "price-ascending":
-        setSearchResult(lowestFirst(searchResult));
+        setQuestResult(lowestFirst(questResult));
         break;
       case "price-descending":
-        setSearchResult(highestFirst(searchResult));
+        setQuestResult(highestFirst(questResult));
         break;
       case "time-ascending":
-        setSearchResult(endingFirst(searchResult));
+        setQuestResult(endingFirst(questResult));
         break;
       case "time-descending":
-        setSearchResult(endingLast(searchResult));
+        setQuestResult(endingLast(questResult));
         break;
       default:
         break;
@@ -65,7 +65,7 @@ export const NFTMarketplace = (props) => {
     const results = nfts.filter((nft) =>
       nft.name.toLowerCase().includes(event.target.value.toLowerCase())
     );
-    setSearchResult(results);
+    setQuestResult(results);
     setApplySort(true);
   };
 
@@ -73,10 +73,10 @@ export const NFTMarketplace = (props) => {
 
   return (
     <Layout user={props.user}>
-      <Search onSubmit={handleSubmit} handleSearch={handleSearch} />
+      <Quest onSubmit={handleSubmit} handleSearch={handleSearch} />
       <Sort onSubmit={handleSubmit} handleSort={handleSort} />
       <div className="nfts">
-        {searchResult.map((nft, index) => {
+        {questResult.map((nft, index) => {
           return (
             <NFT
               _id={nft._id}
@@ -91,3 +91,5 @@ export const NFTMarketplace = (props) => {
     </Layout>
   );
 };
+
+export default NFTMarketplace;

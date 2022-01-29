@@ -3,7 +3,7 @@ import "./NFTCards.css";
 import NFTCard from "../NFTCard/NFTCard";
 import { getNFTs } from "../../services/nfts";
 
-export const NFTCards = () => {
+const NFTCards = () => {
   const [nfts, setNFTs] = useState([]);
 
   useEffect(() => {
@@ -34,3 +34,5 @@ export const NFTCards = () => {
     </div>
   );
 };
+
+export default NFTCards;

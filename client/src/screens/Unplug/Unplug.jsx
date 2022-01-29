@@ -1,19 +1,19 @@
 import { useEffect } from "react";
 import { unplug } from "../../services/users";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Unplug = (props) => {
   const { setUser } = props;
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const unplugUser = async () => {
       await unplug();
       setUser(null);
-      history.push("/");
+      navigate.push("/");
     };
     unplugUser();
-  }, [history, setUser]);
+  }, [navigate, setUser]);
 
   return "";
 };

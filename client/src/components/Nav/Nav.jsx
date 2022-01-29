@@ -6,18 +6,18 @@ const authenticatedOptions = (
     <NavLink className="link" to="/add-nft">
       Add NFT
     </NavLink>
-    <NavLink className="link" to="/sign-out">
-      Sign Out
+    <NavLink className="link" to="/unplug">
+      Unplug
     </NavLink>
   </>
 );
 const unauthenticatedOptions = (
   <>
-    <NavLink className="link" to="/sign-up">
-      Sign Up
+    <NavLink className="link" to="/ascend">
+      Ascend
     </NavLink>
-    <NavLink className="link" to="/sign-in">
-      Sign In
+    <NavLink className="link" to="/plug-in">
+      Plug In
     </NavLink>
   </>
 );

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./NFTCreate.css";
 import { Layout } from "../../components";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { createNFT } from "../../services/nfts";
 
 const NFTCreate = (props) => {
@@ -29,7 +29,7 @@ const NFTCreate = (props) => {
   };
 
   if (isCreated) {
-    return <Redirect to={`/nfts`} />;
+    return <Navigate to={`/nfts`} />;
   }
   return (
     <Layout user={props.user}>

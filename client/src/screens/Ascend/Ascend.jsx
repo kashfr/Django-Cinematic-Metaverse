@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./Ascend.css";
 import { ascend } from "../../services/users";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Ascend = (props) => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const [form, setForm] = useState({
     username: "",
@@ -26,7 +26,7 @@ const Ascend = (props) => {
     try {
       const user = await ascend(form);
       setUser(user);
-      history.push("/");
+      navigate.push("/");
     } catch (error) {
       console.error(error);
       setForm({

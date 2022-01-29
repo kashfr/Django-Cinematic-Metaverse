@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./PlugIn.css";
 import { plugIn } from "../../services/users";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const PlugIn = (props) => {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const [form, setForm] = useState({
     email: "",
@@ -26,7 +26,7 @@ const PlugIn = (props) => {
     try {
       const user = await plugIn(form);
       setUser(user);
-      history.push("/");
+      navigate.push("/");
     } catch (error) {
       console.error(error);
       setForm({

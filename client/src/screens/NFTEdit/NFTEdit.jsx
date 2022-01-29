@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import "./NFTEdit.css";
-import { useParams, Redirect } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { Layout } from "../../components";
-import { getNFT, updateNFT } from "../../services/products";
+import { getNFT, updateNFT } from "../../services/nfts";
 
 const NFTEdit = (props) => {
   const [nft, setNFT] = useState({
@@ -38,7 +38,7 @@ const NFTEdit = (props) => {
   };
 
   if (isUpdated) {
-    return <Redirect to={`/nfts/${id}`} />;
+    return <Navigate to={`/nfts/${id}`} />;
   }
 
   return (

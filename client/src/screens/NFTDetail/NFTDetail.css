@@ -1,135 +1,136 @@
-.product-detail {
-    display: flex;
-    padding: 100px;
-    padding-top: 80px;
+.nft-detail {
+  display: flex;
+  padding: 100px;
+  padding-top: 80px;
 }
 
 .detail {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
 }
 
 .name {
-    font-size: 64px;
-    letter-spacing: 1px;
-    padding: 5px;
+  font-size: 64px;
+  letter-spacing: 1px;
+  padding: 5px;
 }
 
 .seller {
-    font-size: 22px;
-    padding-left: 10px;
-    padding-top: -10px;
-    padding-bottom: 20px;
-    margin-top: -10px;
+  font-size: 22px;
+  padding-left: 10px;
+  padding-top: -10px;
+  padding-bottom: 20px;
+  margin-top: -10px;
 }
 
 .price {
-    font-size: 28px;
+  font-size: 28px;
 }
 
 .description {
-    padding: 10px;
-    letter-spacing: .9px;
+  padding: 10px;
+  letter-spacing: 0.9px;
 }
 
-.product-detail-image {
-    width: 500px;
-    padding: 0 40px;
+.nft-detail-image {
+  width: 500px;
+  padding: 0 40px;
 }
 
 .button-container {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .edit-button {
-    font-size: 22px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    height: 40px;
-    width: 20%;
-    align-self: center;
-    margin-top: 40px;
-    background-color: black;
-    color: white;
-    border-radius: 5%;
-    box-shadow: 2px 2px 10px 2px #CECECE;
-    cursor: pointer;
-    padding: 2px;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  height: 40px;
+  width: 20%;
+  align-self: center;
+  margin-top: 40px;
+  background-color: black;
+  color: white;
+  border-radius: 5%;
+  box-shadow: 2px 2px 10px 2px #cecece;
+  cursor: pointer;
+  padding: 2px;
 }
 
 .delete-button {
-    font-size: 22px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    height: 40px;
-    width: 20%;
-    align-self: center;
-    margin-top: 40px;
-    background-color: black;
-    color: white;
-    border: none;
-    box-shadow: 2px 2px 10px 2px #CECECE;
-    cursor: pointer;
-    padding: 2px;
+  font-size: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  height: 40px;
+  width: 20%;
+  align-self: center;
+  margin-top: 40px;
+  background-color: black;
+  color: white;
+  border: none;
+  box-shadow: 2px 2px 10px 2px #cecece;
+  cursor: pointer;
+  padding: 2px;
 }
 
 .edit-link {
-    color: white;
+  color: white;
 }
 
 .reviews-wrapper {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .review-create-form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
-.product-reviews {
-    width: 100%;
+.nft-reviews {
+  width: 100%;
 }
 
 .review-submit-button {
-    width: 50%;
+  width: 50%;
 }
 
 @media (max-width: 1024px) {
-    .name {
-        font-size: 32px;
-    }
-    .product-detail-image {
-        width: 500px;
-        margin-top: -100px;
-        padding: 10px;
-    }
-    .product-detail {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  .name {
+    font-size: 32px;
+  }
+  .nft-detail-image {
+    width: 500px;
+    margin-top: -100px;
+    padding: 10px;
+  }
+  .nft-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (max-width: 800px) {
-    .product-detail-image {
-        width: 300px;
-        margin: 15px;
-        padding: 10px;
-    }
-    .product-detail {
-        padding: 0px;
-        padding-top: 120px;
-    }
-    .button-container {
-        padding: 20px;
-        padding-bottom: 80px;
-    }
-    .edit-button, .delete-button {
-        width: 40%;
-    }
+  .nft-detail-image {
+    width: 300px;
+    margin: 15px;
+    padding: 10px;
+  }
+  .nft-detail {
+    padding: 0px;
+    padding-top: 120px;
+  }
+  .button-container {
+    padding: 20px;
+    padding-bottom: 80px;
+  }
+  .edit-button,
+  .delete-button {
+    width: 40%;
+  }
 }
