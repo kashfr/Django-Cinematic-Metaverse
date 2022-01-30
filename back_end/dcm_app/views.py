@@ -5,7 +5,6 @@ from rest_framework.response import Response
 from rest_framework import mixins
 from .serializers import AvatarSerializer, NFTSerializer, ObservationSerializer
 from .models import Avatar, NFT, Observation
-# from .forms import NFTForm
 
 # Create your views here.
 
@@ -22,10 +21,6 @@ class NFTViewSet(viewsets.ModelViewSet):
     serializer_class = NFTSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, ]
     # permissions_classes = [permissions.AllowAny]  # testing
-
-
-# class NFTFormViewSet(viewsets.ModelViewSet):
-#     queryset = NFTForm.objects.all()
 
 
 class ObservationViewSet(viewsets.ModelViewSet):

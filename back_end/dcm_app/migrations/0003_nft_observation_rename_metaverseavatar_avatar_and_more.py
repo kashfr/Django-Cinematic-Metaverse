@@ -14,7 +14,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='NFT',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=128)),
                 ('image_url', models.URLField()),
                 ('current_bid', models.CharField(max_length=128)),
@@ -23,7 +24,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Observation',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('username', models.CharField(max_length=128)),
                 ('text', models.TextField(max_length=1000)),
             ],
@@ -38,6 +40,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='nft',
             name='avatar',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='avatar', to='dcm_app.avatar'),
+            field=models.ForeignKey(
+                blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='avatar', to='dcm_app.avatar'),
         ),
     ]

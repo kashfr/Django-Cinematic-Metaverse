@@ -43,6 +43,8 @@ class NFT(models.Model):
 class Observation(models.Model):
     username = models.CharField(max_length=128)
     text = models.TextField(max_length=1000)
+    nfts = models.ForeignKey(
+        NFT, on_delete=models.CASCADE, blank=True, null=True, related_name='nft')
 
     def __str__(self):
         return self.username

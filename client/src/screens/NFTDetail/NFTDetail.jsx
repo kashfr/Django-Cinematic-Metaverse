@@ -8,15 +8,15 @@ import { useParams, Link } from "react-router-dom";
 const NFTDetail = (props) => {
   const [nft, setNFT] = useState({
     name: "",
-    description: "",
-    imgURL: "",
-    price: "",
-    reviews: [],
+    image_url: "",
+    current_bid: "",
+    observations: [],
   });
   const [observation, setObservation] = useState({
-    author: "",
-    rating: "",
-    description: "",
+    username: "",
+    // rating: "",
+    text: "",
+    observations: [],
   });
   const [isLoaded, setLoaded] = useState(false);
   const { id } = useParams();
@@ -70,15 +70,15 @@ const NFTDetail = (props) => {
               }}
             />
           </div> */}
-            <div className="price">{`$${nft.current_price}`}</div>
+            <div className="current_bid">{`$${nft.current_bid}`}</div>
             {/* <div className="description">{nft.description}</div> */}
             <div className="button-container">
-              <Link className="edit-button" to={`/nfts/${nft._id}/edit`}>
+              <Link className="edit-button" to={`/nfts/${nft.id}/edit`}>
                 Edit
               </Link>
               <button
                 className="delete-button"
-                onClick={() => deleteNFT(nft._id)}
+                onClick={() => deleteNFT(nft.id)}
               >
                 Delete
               </button>
@@ -89,11 +89,11 @@ const NFTDetail = (props) => {
           <ObservationForm
             username={observation.username}
             // rating={observation.rating}
-            description={observation.description}
+            description={observation.text}
             onSubmit={handleSubmit}
             onChange={handleChange}
           />
-          <Observations observations={nft.observations} />
+          {/* <Observations observations={observation} /> */}
         </div>
       </>
     </Layout>

@@ -19,14 +19,14 @@ const NFTCards = () => {
     .map((nft, index) =>
       index < 8 ? (
         <NFTCard
-          _id={nft._id}
+          id={nft.id}
           name={nft.name}
-          imgURL={nft.imgURL}
+          image_url={nft.image_url}
           key={index}
         />
       ) : null
     );
-
+  console.log(nfts);
   return (
     <div className="nft-cards">
       <div className="oldest">Ending Soon..</div>

@@ -15,11 +15,11 @@ const Sort = (props) => {
         <option value="name-descending">
           &nbsp; Alphabetically, Z-A &nbsp;
         </option>
-        <option value="price-ascending">
-          &nbsp; Price, low to high &nbsp;
+        <option value="current-bid-ascending">
+          &nbsp; Current Bid, low to high &nbsp;
         </option>
-        <option value="price-descending">
-          &nbsp; Price, high to low &nbsp;
+        <option value="current-bid-descending">
+          &nbsp; Current Bid, high to low &nbsp;
         </option>
         <option value="time-ascending">&nbsp; Time, low to high &nbsp;</option>
         <option value="time-descending">&nbsp; Time, high to low &nbsp;</option>

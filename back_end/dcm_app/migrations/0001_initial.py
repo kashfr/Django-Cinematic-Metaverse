@@ -14,7 +14,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Character',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=128)),
                 ('image_url', models.URLField()),
                 ('current_bid', models.CharField(max_length=128)),
@@ -23,7 +24,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='MetaverseAvatar',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('username', models.CharField(max_length=128)),
                 ('email_address', models.EmailField(max_length=254)),
             ],

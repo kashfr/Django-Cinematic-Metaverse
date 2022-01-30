@@ -5,7 +5,7 @@ import "./Observations.css";
 const Observations = (props) => {
   const observationsJSX = props.observations.map((observation, index) => (
     <div className="nft-observation" key={index}>
-      <h1>{observation.author}</h1>
+      <h1>{observation.username}</h1>
       {/* <StarRating
         size={observation.rating}
         value={observation.rating}
@@ -13,7 +13,7 @@ const Observations = (props) => {
           console.log(val);
         }}
       /> */}
-      <p>{observation.description}</p>
+      <p>{observation.text}</p>
     </div>
   ));
 

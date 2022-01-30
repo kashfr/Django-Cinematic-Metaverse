@@ -22,9 +22,9 @@ const Home = (props) => {
         {nfts.map((nft) => (
           <div>
             <Link to={`/nfts/${nft.id}`}>
-              <img src={nft.image_url} alt={nft.name} />
+              {/* <img src={nft.image_url} alt={nft.name} />
               <p>{nft.name}</p>
-              <p>{nft.current_bid}</p>
+              <p>{nft.current_bid}</p> */}
             </Link>
           </div>
         ))}

@@ -1,19 +1,13 @@
 import React from "react";
 import "./ObservationForm.css";
 
-const ObservationForm = ({
-  author,
-  // rating,
-  description,
-  onChange,
-  onSubmit,
-}) => {
+const ObservationForm = ({ username, text, onChange, onSubmit }) => {
   return (
     <form className="observation-create-form" onSubmit={(e) => onSubmit(e)}>
       <input
         className="observation-input-author"
         placeholder="Name"
-        value={author}
+        value={username}
         name="author"
         required
         autoFocus
@@ -31,7 +25,7 @@ const ObservationForm = ({
         className="observation-textarea-description"
         rows={10}
         placeholder="Write your observation..."
-        value={description}
+        value={text}
         name="description"
         required
         onChange={(e) => onChange(e)}

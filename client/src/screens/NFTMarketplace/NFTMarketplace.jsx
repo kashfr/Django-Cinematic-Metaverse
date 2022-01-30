@@ -11,6 +11,7 @@ import {
   endingLast,
 } from "../../utils/sort";
 import { getNFTs } from "../../services/nfts";
+import { Link } from "react-router-dom";
 
 const NFTMarketplace = (props) => {
   const [nfts, setNFTs] = useState([]);
@@ -39,10 +40,10 @@ const NFTMarketplace = (props) => {
       case "name-descending":
         setQuestResult(ZA(questResult));
         break;
-      case "price-ascending":
+      case "current-bid-ascending":
         setQuestResult(lowestFirst(questResult));
         break;
-      case "price-descending":
+      case "current-bid-descending":
         setQuestResult(highestFirst(questResult));
         break;
       case "time-ascending":
@@ -79,14 +80,23 @@ const NFTMarketplace = (props) => {
         {questResult.map((nft, index) => {
           return (
             <NFT
-              _id={nft._id}
+              id={nft.id}
               name={nft.name}
-              imgURL={nft.image_url}
-              price={nft.current_bid}
+              image_url={nft.image_url}
+              current_bid={nft.current_bid}
               key={index}
             />
           );
         })}
+        {nfts.map((nft) => (
+          <div>
+            <Link to={`/nfts/${nft.id}`}>
+              <img src={nft.image_url} alt={nft.name} />
+              <p>{nft.name}</p>
+              <p>{nft.current_bid}</p>
+            </Link>
+          </div>
+        ))}
       </div>
     </Layout>
   );

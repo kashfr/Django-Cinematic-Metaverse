@@ -7,9 +7,9 @@ import { getNFT, updateNFT } from "../../services/nfts";
 const NFTEdit = (props) => {
   const [nft, setNFT] = useState({
     name: "",
-    description: "",
-    imgURL: "",
-    price: "",
+    image_url: "",
+    current_bid: "",
+    // description: "",
   });
 
   const [isUpdated, setUpdated] = useState(false);
@@ -68,10 +68,10 @@ const NFTEdit = (props) => {
             onChange={handleChange}
           />
           <input
-            className="input-price"
-            placeholder="Price"
+            className="input-current-bid"
+            placeholder="Current Bid"
             value={nft.current_bid}
-            name="price"
+            name="current_bid"
             required
             onChange={handleChange}
           />

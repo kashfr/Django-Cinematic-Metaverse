@@ -11,9 +11,9 @@ import NFTDetail from "./screens/NFTDetail/NFTDetail";
 import AvatarProfile from "./components/AvatarProfile/AvatarProfile";
 
 import { verifyUser } from "./services/users";
-import SignUp from "./screens/Ascend/Ascend";
-import SignIn from "./screens/PlugIn/PlugIn";
-import SignOut from "./screens/Unplug/Unplug";
+import Ascend from "./screens/Ascend/Ascend";
+import PlugIn from "./screens/PlugIn/PlugIn";
+import Unplug from "./screens/Unplug/Unplug";
 
 const App = () => {
   // let navigate = useNavigate();
@@ -31,21 +31,20 @@ const App = () => {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home user={user} />} />
-        <Route path="/ascend" element={<SignUp setUser={setUser} />} />
-        <Route path="/plug-in" element={<SignIn setUser={setUser} />} />
-        <Route path="/unplug" element={<SignOut setUser={setUser} />} />
+        <Route path="/ascend" element={<Ascend setUser={setUser} />} />
+        <Route path="/plug-in" element={<PlugIn setUser={setUser} />} />
+        <Route path="/unplug" element={<Unplug setUser={setUser} />} />
 
-        <Route path="/add-nft">
-          {user ? <NFTCreate user={user} /> : <Navigate to="/ascend" />}
-        </Route>
+        <Route
+          path="/add-nft"
+          element={user ? <NFTCreate user={user} /> : <Navigate to="/ascend" />}
+        />
         <Route path="/nfts" element={<NFTMarketplace user={user} />} />
         <Route
           path="nfts/:id/edit"
           element={user ? <NFTEdit user={user} /> : <Navigate to="/ascend" />}
         />
-        <Route exact path="/nfts/:id">
-          <NFTDetail user={user} />
-        </Route>
+        <Route exact path="/nfts/:id" element={<NFTDetail user={user} />} />
 
         <Route path="/avatars" element={<AvatarProfile />} />
         <Route path="/avatars/:id" element={<AvatarProfile />} />
