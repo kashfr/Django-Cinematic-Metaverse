@@ -7,7 +7,7 @@ const ObservationForm = ({ username, text, onChange, onSubmit }) => {
       <input
         className="observation-input-author"
         placeholder="Name"
-        value={username}
+        value={text}
         name="author"
         required
         autoFocus

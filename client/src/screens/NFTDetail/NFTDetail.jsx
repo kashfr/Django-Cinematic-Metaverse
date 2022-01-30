@@ -92,7 +92,7 @@ const NFTDetail = (props) => {
             onSubmit={handleSubmit}
             onChange={handleChange}
           />
-          <Observations observations={nft.current_bid} />
+          {/* <Observations observations={nft} /> */}
         </div>
       </>
     </Layout>
