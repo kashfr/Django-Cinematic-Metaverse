@@ -5,4 +5,3 @@ from .models import Avatar, NFT, Observation
 admin.site.register(Avatar)
 admin.site.register(NFT)
 admin.site.register(Observation)
-# admin.site.register([Avatar, NFT])

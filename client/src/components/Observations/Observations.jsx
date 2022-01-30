@@ -3,6 +3,7 @@ import React from "react";
 import "./Observations.css";
 
 const Observations = (props) => {
+  console.log(props);
   const observationsJSX = props.observations.map((observation, index) => (
     <div className="nft-observation" key={index}>
       <h1>{observation.username}</h1>

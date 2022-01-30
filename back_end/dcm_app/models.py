@@ -25,6 +25,14 @@ class Avatar(models.Model):
         return self.username
 
 
+class Observation(models.Model):
+    username = models.CharField(max_length=128)
+    text = models.TextField(max_length=1000)
+
+    def __str__(self):
+        return self.username
+
+
 class NFT(models.Model):
     avatar = models.ForeignKey(
         Avatar, on_delete=models.CASCADE, blank=True, null=True, related_name='avatar')
@@ -33,18 +41,10 @@ class NFT(models.Model):
     current_bid = models.CharField(max_length=128)
     start_date = models.DateField(
         auto_now_add=False, default=datetime.date.today)
+    observations = models.ForeignKey(
+        Observation, on_delete=models.CASCADE, blank=True, null=True, related_name='observation')
     # auction_duration = models.DurationField(
     #     choices=INTERVAL_CHOICES, null=True)
 
     def __str__(self):
         return self.name
-
-
-class Observation(models.Model):
-    username = models.CharField(max_length=128)
-    text = models.TextField(max_length=1000)
-    nfts = models.ForeignKey(
-        NFT, on_delete=models.CASCADE, blank=True, null=True, related_name='nft')
-
-    def __str__(self):
-        return self.username

@@ -16,7 +16,6 @@ const NFTDetail = (props) => {
     username: "",
     // rating: "",
     text: "",
-    observations: [],
   });
   const [isLoaded, setLoaded] = useState(false);
   const { id } = useParams();
@@ -93,7 +92,7 @@ const NFTDetail = (props) => {
             onSubmit={handleSubmit}
             onChange={handleChange}
           />
-          {/* <Observations observations={observation} /> */}
+          <Observations observations={nft.current_bid} />
         </div>
       </>
     </Layout>
