@@ -51,11 +51,13 @@ class Observation(models.Model):
     username = models.CharField(max_length=128)
     text = models.TextField(max_length=1000)
 
-    class Meta:
-        ordering = ['text']
+    # class Meta:
+    #     ordering = ['text']
+    def __str__(self):
+        return '%s - %s' % (self.nft.name, self.text)
 
-        def __str__(self):
-            return self.username
+        # def __str__(self):
+        #     return self.username
 
 
 # class Observation(models.Model):
