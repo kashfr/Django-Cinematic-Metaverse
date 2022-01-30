@@ -15,16 +15,20 @@ select:focus {
 
 input,
 textarea {
-  font-size: 48px;
+  font-size: 18px;
   font-family: Georgia, "Times New Roman", Times, serif;
-  border-top-style: hidden;
+  border-top-style: 1px;
+  border-right-style: 1px;
+  border-left-style: 1px;
+  border-bottom-style: 1px;
+  /* border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
-  border-bottom-style: hidden;
+  border-bottom-style: hidden; */
 }
 
 textarea {
-  font-size: 24px;
+  font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
 }
 

@@ -48,13 +48,13 @@ class NFT(models.Model):
 class Observation(models.Model):
     nft = models.ForeignKey(NFT, on_delete=models.CASCADE,
                             related_name='observations')
-    username = models.CharField(max_length=128)
+    name = models.CharField(max_length=128)
     text = models.TextField(max_length=1000)
 
     # class Meta:
     #     ordering = ['text']
     def __str__(self):
-        return '%s - %s' % (self.nft.name, self.text)
+        return '%s - %s' % (self.nft.name, self.name)
 
         # def __str__(self):
         #     return self.username

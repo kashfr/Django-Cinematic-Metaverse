@@ -79,7 +79,7 @@
   color: white;
 }
 
-.reviews-wrapper {
+.observations-wrapper {
   display: flex;
   justify-content: space-evenly;
 }
@@ -90,7 +90,7 @@
   width: 100%;
 }
 
-.nft-reviews {
+.nft-observations {
   width: 100%;
 }
 

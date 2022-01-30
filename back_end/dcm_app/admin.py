@@ -1,10 +1,13 @@
 from django.contrib import admin
+
+from .forms import ObservationForm
 from .models import Avatar, NFT, Observation
 
 # Register your models here.
 admin.site.register(Avatar)
 admin.site.register(NFT)
 admin.site.register(Observation)
+# admin.site.register(ObservationForm)
 
 
 class ObservationAdmin(admin.ModelAdmin):
