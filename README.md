@@ -10,7 +10,7 @@ Bidders will be using the SHA coin created and developed by the anonymous Mr. Sh
 
 https://whimsical.com/Sf6nNpC7fAY63YVNeSxZyW
 
-![wireframe](images/wireframe.png)
+![wireframe](readme_images/wireframe.png)
 
 ## Component Hierarchy
 
@@ -18,21 +18,21 @@ https://www.figma.com/file/UeiMeG3AKHzdRcwubPO9Sz/Django-Cinematic-Universe?node
 
 MacBook Pro
 
-![home screen](images/home.png)
+![home screen](readme_images/home.png)
 
-![character detail screen](images/character_detail.png)
+![character detail screen](readme_images/character_detail.png)
 
-![movie detail screen](images/movie_detail.png)
+![movie detail screen](readme_images/movie_detail.png)
 
-![sign up screen](images/sign_up.png)
+![sign up screen](readme_images/sign_up.png)
 
-![sign in screen](images/sign_in.png)
+![sign in screen](readme_images/sign_in.png)
 
-![list item screen](images/list_item.png)
+![list item screen](readme_images/list_item.png)
 
 Media Query
 
-![media query screens](images/media_query.png)
+![media query screens](readme_images/media_query.png)
 
 ## Dependencies
 
@@ -117,14 +117,14 @@ Allow users to upload actual images from their file explorer.
 
 ## Project Schedule
 
-| Day    | Deliverable       | Status  |
-| ------ | ----------------- | ------- |
-| Jan 24 | Proposal Approval | Pending |
-| Jan 25 | Backend Creation  | Pending |
-| Jan 26 | Frontend Creation | Pending |
-| Jan 27 | CSS Components    | Pending |
-| Jan 28 | Heroku Setup      | Pending |
-| Jan 31 | Presentations     | Pending |
+| Day    | Deliverable       | Status    |
+| ------ | ----------------- | --------- |
+| Jan 24 | Proposal Approval | Completed |
+| Jan 25 | Backend Creation  | Completed |
+| Jan 26 | Frontend Creation | Completed |
+| Jan 27 | CSS Components    | Completed |
+| Jan 28 | Heroku Setup      | Completed |
+| Jan 31 | Presentations     | Pending   |
 
 ## Timeframes
 
