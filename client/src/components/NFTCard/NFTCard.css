@@ -19,8 +19,10 @@
 }
 
 .nft-card a {
-  text-decoration: underline;
+  text-decoration: none;
   letter-spacing: 0.7px;
+  font-weight: bold;
+  font-size: larger;
 }
 
 @media (max-width: 500px) {

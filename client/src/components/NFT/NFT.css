@@ -4,28 +4,31 @@
   align-items: center;
   margin: 10px;
   box-shadow: 0px 0px 3px 1px #cecece;
-  transition: 250ms all;
+  /* transition: 250ms all; */
   padding: 20px;
   margin-bottom: 60px;
 }
 
 .nft:hover {
-  transform: scale(1.02);
+  transform: scale(1.2);
   opacity: 0.9;
 }
 
 .nft-image {
-  width: 300px;
+  width: 200px;
 }
 
 .nft-name {
   font-size: 24px;
+  font-weight: bold;
   padding: 10px;
+  color: white
 }
 
 .current_bid {
   font-size: 18px;
   padding: 10px;
+  color: white;
 }
 
 @media (max-width: 500px) {

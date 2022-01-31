@@ -3,8 +3,8 @@
 nav {
   flex: 1;
   position: fixed;
-  width: 100%;
-  background-color: white;
+  width: 100vw;
+  background-color: rgb(0, 0, 124);
   z-index: 1;
   top: 0;
   left: 0;
@@ -14,19 +14,17 @@ nav {
   font-family: "Bangers", cursive;
   display: flex;
   padding: 20px 0;
-  margin-left: -2px;
-  margin-right: -2px;
-  margin-top: -2px;
-  box-shadow: 1px 1px 1px 0.3px #cecece;
+  /* margin-left: -2px; */
+  /* margin-right: -2px; */
+  /* margin-top: -2px; */
+  /* box-shadow: 1px 1px 1px 0.3px #cecece; */
   width: 100%;
 }
 
 .logo {
-  /* font-family: "Bangers", cursive; */
   text-align: center;
   font-weight: bold;
   font-size: 34px;
-  /* letter-spacing: -3px; */
   flex: 1;
   max-width: 30vw;
   transition: 250ms all;
@@ -54,7 +52,7 @@ nav {
 
 a {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 @media (max-width: 500px) {

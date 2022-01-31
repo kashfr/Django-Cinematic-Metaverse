@@ -1,19 +1,22 @@
 .nft-cards {
   width: 90vw;
-  padding: 50px;
+  /* padding: 50px; */
   margin: 50px;
 }
 
 .cards {
   display: flex;
-  overflow-x: scroll;
+  justify-content: center;
+  /* overflow-x: scroll; */
 }
 
-.latest {
-  font-size: 20px;
+.bubbling {
+  font-size: 40px;
   color: rgb(56, 55, 55);
-  padding: 10px;
-  margin-top: 40px;
+  padding: 2px;
+  /* margin-top: 20px; */
+  color: white;
+  font-weight: bolder;
 }
 
 @media (max-width: 500px) {

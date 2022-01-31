@@ -17,7 +17,7 @@ const NFTCards = ({toggle}) => {
   const cards = nfts
     .reverse()
     .map((nft, index) =>
-      index < 8 ? (
+      index < 1 ? (
         <NFTCard
           id={nft.id}
           name={nft.name}
@@ -29,7 +29,7 @@ const NFTCards = ({toggle}) => {
   console.log(nfts);
   return (
     <div className="nft-cards">
-      <div className="oldest">Ending Soon..</div>
+      <div className="bubbling">Bubbling..</div>
       <div className="cards">{cards}</div>
     </div>
   );

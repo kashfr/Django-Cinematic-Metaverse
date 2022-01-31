@@ -5,7 +5,6 @@ from rest_framework.response import Response
 from rest_framework import mixins
 from .serializers import AvatarSerializer, NFTSerializer, ObservationSerializer
 from .models import Avatar, NFT, Observation
-# from .forms import ObservationForm
 
 # Create your views here.
 
@@ -28,8 +27,3 @@ class ObservationViewSet(viewsets.ModelViewSet):
     queryset = Observation.objects.all()
     serializer_class = ObservationSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-
-
-# class ObservationFormViewSet(viewsets.ModelViewSet):
-#     queryset = ObservationForm.objects.all()
-#     permission_classes = [permissions.IsAuthenticatedOrReadOnly]

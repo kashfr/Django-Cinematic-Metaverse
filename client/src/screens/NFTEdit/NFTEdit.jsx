@@ -9,7 +9,7 @@ const NFTEdit = (props) => {
     name: "",
     image_url: "",
     current_bid: "",
-    // description: "",
+    observations: "",
   });
 
   const [isUpdated, setUpdated] = useState(false);

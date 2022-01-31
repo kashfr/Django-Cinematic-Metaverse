@@ -6,5 +6,3 @@ class ObservationForm(ModelForm):
     class Meta:
         model = Observation
         fields = '__all__'
-
-# fields = ('name', 'email', 'body')

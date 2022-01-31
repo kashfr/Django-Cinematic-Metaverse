@@ -46,7 +46,7 @@ const NFTCreate = (props) => {
           onChange={handleChange}
         />
         <input
-          className="input-current_bid"
+          className="input-starting-bid"
           placeholder="Starting Bid"
           value={nft.current_bid}
           name="current_bid"

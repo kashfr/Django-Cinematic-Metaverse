@@ -33,24 +33,39 @@ textarea {
 }
 
 .input-name {
-  font-size: 48px;
+  font-size: 30px;
   font-family: Georgia, "Times New Roman", Times, serif;
+  padding-left: 10px;
+  border-radius: 25px;
 }
 
-.input-current_bid {
+.input-starting-bid {
+  font-family: "Bangers", cursive;
   padding-left: 10px;
-  font-size: 24px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  border-radius: 25px;
 }
 
 .input-image-link {
-  font-size: 18px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-family: "Bangers", cursive;
+  border-radius: 25px;
+  padding-left: 10px;
+}
+
+.start-date {
+  font-size: 30px;
+  font-family: "Bangers", cursive;
+  border-radius: 25px;
+  padding-left: 10px;
 }
 
 .submit-button {
-  font-size: 22px;
-  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-family: "Bangers", cursive;
   height: 40px;
   margin-top: 40px;
   background-color: black;
@@ -58,6 +73,7 @@ textarea {
   border: none;
   box-shadow: 2px 2px 10px 2px #cecece;
   cursor: pointer;
+  border-radius: 25px;
 }
 
 @media (max-width: 500px) {

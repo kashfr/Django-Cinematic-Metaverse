@@ -1,8 +1,9 @@
 .sort-container {
     display: flex;
-    width: 83.5vw;
+    width: 20vw;
     justify-content: flex-end;
     margin: 20px;
+    flex-direction: column;
 }
 
 label {

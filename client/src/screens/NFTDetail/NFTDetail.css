@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Kalam:wght@700&family=Ultra&display=swap");
+
 .nft-detail {
   display: flex;
   padding: 100px;
@@ -14,6 +16,8 @@
   font-size: 64px;
   letter-spacing: 1px;
   padding: 5px;
+  color: white;
+  font-weight: bold;
 }
 
 .seller {
@@ -25,7 +29,8 @@
 }
 
 .current_bid {
-  font-size: 28px;
+  font-size: 36px;
+  font-weight: bolder;
 }
 
 .description {
@@ -34,7 +39,7 @@
 }
 
 .nft-detail-image {
-  width: 500px;
+  width: 300px;
   padding: 0 40px;
 }
 
@@ -48,7 +53,7 @@
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   height: 40px;
-  width: 20%;
+  /* width: 20%; */
   align-self: center;
   margin-top: 40px;
   background-color: black;
@@ -64,7 +69,7 @@
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   height: 40px;
-  width: 20%;
+  /* width: 20%; */
   align-self: center;
   margin-top: 40px;
   background-color: black;
@@ -81,7 +86,8 @@
 
 .observations-wrapper {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .review-create-form {

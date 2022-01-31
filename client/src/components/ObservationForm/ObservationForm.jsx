@@ -14,11 +14,11 @@ const ObservationForm = ({ name, text, onChange, onSubmit }) => {
         onChange={(e) => onChange(e)}
       />
       <textarea
-        className="observation-textarea-description"
+        className="observation-textarea-text"
         rows={10}
         placeholder="write your observation here"
         value={text}
-        name="description"
+        name="text"
         required
         onChange={(e) => onChange(e)}
       />

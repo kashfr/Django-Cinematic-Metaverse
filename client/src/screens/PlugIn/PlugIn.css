@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Kalam:wght@700&family=Ultra&display=swap");
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat';
+  font-family: "Bangers", cursive;
+  font-size: 38px;
   overflow: hidden;
   height: 100%;
+  color: white;
 }
 
 button {
@@ -87,7 +90,7 @@ button {
   padding: 0.6em 1em;
   margin: 0.5em auto;
   font-size: 1rem;
-  border-radius: 3px;
+  border-radius: 25px;
   border: 2px solid #e0e0e0;
   outline: none;
   transition: all 0.4s ease;
@@ -105,7 +108,7 @@ button {
 .form-container form button {
   width: 50%;
   margin: 1em auto;
-  background: #56c8d8;
+  background: #ffeb3b;
   border: none;
 }
 
