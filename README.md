@@ -99,7 +99,7 @@ class Movie(models.Model):
 
 ## Entity Relationship Database
 
-![erd](images/entity_relationship_database.png)
+![erd](readme_images/entity_relationship_database.png)
 
 #### MVP
 

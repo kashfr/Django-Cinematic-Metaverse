@@ -3,7 +3,7 @@ import "./NFTCards.css";
 import NFTCard from "../NFTCard/NFTCard";
 import { getNFTs } from "../../services/nfts";
 
-const NFTCards = ({toggle}) => {
+const NFTCards = ({ toggle }) => {
   const [nfts, setNFTs] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const NFTCards = ({toggle}) => {
   const cards = nfts
     .reverse()
     .map((nft, index) =>
-      index < 1 ? (
+      index < 3 ? (
         <NFTCard
           id={nft.id}
           name={nft.name}
@@ -29,7 +29,7 @@ const NFTCards = ({toggle}) => {
   console.log(nfts);
   return (
     <div className="nft-cards">
-      <div className="bubbling">Bubbling..</div>
+      <div className="bubbling">Just Listed!</div>
       <div className="cards">{cards}</div>
     </div>
   );
