@@ -2,7 +2,6 @@ import "./NFT.css";
 import { Link } from "react-router-dom";
 
 const NFT = (props) => {
-  console.log(props);
   return (
     <div>
       <Link className="nft" to={`/nfts/${props.id}`}>

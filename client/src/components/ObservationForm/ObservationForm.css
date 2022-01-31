@@ -11,3 +11,8 @@
   cursor: pointer;
   padding: 2px;
 }
+
+.observation-create-form {
+  display: flex;
+  flex-direction: column;
+}

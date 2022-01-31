@@ -1,11 +1,12 @@
 import React from "react";
 import "./ObservationForm.css";
 
-const ObservationForm = ({ name, text, onChange, onSubmit }) => {
+const ObservationForm = ({ name, text, onChange, onSubmit, setToggle }) => {
   return (
     <form className="observation-create-form" onSubmit={(e) => onSubmit(e)}>
-      <input
+      <textarea
         className="observation-input-name"
+        rows={3}
         placeholder="name"
         value={name}
         name="name"
@@ -15,7 +16,7 @@ const ObservationForm = ({ name, text, onChange, onSubmit }) => {
       />
       <textarea
         className="observation-textarea-text"
-        rows={10}
+        rows={3}
         placeholder="write your observation here"
         value={text}
         name="text"
@@ -30,3 +31,5 @@ const ObservationForm = ({ name, text, onChange, onSubmit }) => {
 };
 
 export default ObservationForm;
+
+// props.setToggle((prev) => !prev);

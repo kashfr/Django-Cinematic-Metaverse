@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import "./NFTDetail.css";
 import { Layout, ObservationForm, Observations } from "../../components";
 import { getNFT, deleteNFT, updateNFT } from "../../services/nfts";
-import { useParams, Link, useNavigate } from "react-router-dom";
-// import StarRating from "star-rating-react";
+import { createObservation } from "../../services/observations";
+import { useParams, Link, useNavigate, Navigate } from "react-router-dom";
 
 const NFTDetail = (props) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [isLoaded, setLoaded] = useState(false);
+  const { id } = useParams();
+  const [reload, setReload] = useState(true);
 
   const [nft, setNFT] = useState({
     name: "",
@@ -14,13 +17,13 @@ const NFTDetail = (props) => {
     current_bid: "",
     observations: [],
   });
+
   const [observation, setObservation] = useState({
     name: "",
     text: "",
-    // observations: [],
+    avatar: 16,
+    nft: id,
   });
-  const [isLoaded, setLoaded] = useState(false);
-  const { id } = useParams();
 
   useEffect(() => {
     const fetchNFT = async () => {
@@ -40,11 +43,8 @@ const NFTDetail = (props) => {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    nft.observations.push(observation);
-    console.log(nft);
-    setNFT(nft);
-    await updateNFT(id, nft);
+    // event.preventDefault();
+    await createObservation(observation);
   };
 
   if (!isLoaded) {
@@ -71,9 +71,9 @@ const NFTDetail = (props) => {
               <button
                 className="delete-button"
                 onClick={() => {
-                  deleteNFT(nft.id)
-                  props.setToggle(prev => !prev)
-                  navigate("/")
+                  deleteNFT(nft.id);
+                  props.setToggle((prev) => !prev);
+                  navigate("/");
                 }}
               >
                 Delete
@@ -87,6 +87,7 @@ const NFTDetail = (props) => {
             description={observation.text}
             onSubmit={handleSubmit}
             onChange={handleChange}
+            setToggle={props.setToggle}
           />
           <Observations observations={nft.observations} />
         </div>

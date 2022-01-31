@@ -29,10 +29,10 @@ const NFTCreate = (props) => {
     const created = await createNFT(nft);
     setCreated({ created });
   };
-
   if (isCreated) {
     return <Navigate to={`/nfts`} />;
   }
+
   return (
     <Layout user={props.user}>
       <form className="create-form" onSubmit={handleSubmit}>

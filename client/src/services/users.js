@@ -34,7 +34,7 @@ export const unplug = async () => {
 export const verifyUser = async () => {
   const refresh = localStorage.getItem("refresh");
   if (refresh) {
-    const resp = await api.post("api/token/refresh/", { refresh });
+    const resp = await api.post("refresh-token", { refresh });
     localStorage.setItem("token", resp.data.access);
     return resp;
   }
