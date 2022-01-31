@@ -8,8 +8,10 @@ const NFTCreate = (props) => {
   const [nft, setNFT] = useState({
     name: "",
     image_url: "",
-    currentcurrent_bid: "",
-    startDate: "",
+    current_bid: "",
+    start_date: "",
+    avatar: 2,
+    observations: [],
   });
 
   const [isCreated, setCreated] = useState(false);
@@ -59,15 +61,6 @@ const NFTCreate = (props) => {
           required
           onChange={handleChange}
         />
-        {/* <textarea
-          className="textarea-description"
-          rows={10}
-          placeholder="Description"
-          value={nft.description}
-          name="description"
-          required
-          onChange={handleChange}
-        /> */}
         <input
           className="input-image-link"
           placeholder="Image Link"

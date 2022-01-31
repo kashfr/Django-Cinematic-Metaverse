@@ -4,6 +4,7 @@ from datetime import timedelta
 from django.db import models
 from django.utils.timezone import now
 from pytz import timezone
+from django.contrib.auth.models import User
 
 now = datetime.datetime.now()
 # now = timezone.now()
@@ -30,7 +31,7 @@ class Avatar(models.Model):
 
 class NFT(models.Model):
     avatar = models.ForeignKey(
-        Avatar, on_delete=models.CASCADE, blank=True, null=True, related_name='avatar')
+        Avatar, on_delete=models.CASCADE, blank=True, null=True, related_name='nfts')
     name = models.CharField(max_length=128)
     image_url = models.URLField(max_length=200)
     current_bid = models.CharField(max_length=128)
@@ -47,7 +48,7 @@ class NFT(models.Model):
 
 class Observation(models.Model):
     nft = models.ForeignKey(NFT, on_delete=models.CASCADE,
-                            related_name='observations')
+                            related_name='observations', blank=True, null=True)
     name = models.CharField(max_length=128)
     text = models.TextField(max_length=1000)
 
@@ -58,7 +59,6 @@ class Observation(models.Model):
 
         # def __str__(self):
         #     return self.username
-
 
 # class Observation(models.Model):
 #     nft = models.ForeignKey(NFT, on_delete=models.CASCADE,

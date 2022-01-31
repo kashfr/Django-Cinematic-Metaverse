@@ -7,7 +7,7 @@ const PlugIn = (props) => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    email: "",
+    username: "",
     password: "",
     isError: false,
     errorMsg: "",
@@ -26,13 +26,13 @@ const PlugIn = (props) => {
     try {
       const user = await plugIn(form);
       setUser(user);
-      navigate.push("/");
+      navigate("/");
     } catch (error) {
       console.error(error);
       setForm({
         isError: true,
         errorMsg: "Invalid Credentials",
-        email: "",
+        username: "",
         password: "",
       });
     }
@@ -51,19 +51,19 @@ const PlugIn = (props) => {
     }
   };
 
-  const { email, password } = form;
+  const { username, password } = form;
 
   return (
     <div className="form-container">
       <h3>Plug In</h3>
       <form onSubmit={onPlugIn}>
-        <label>Email</label>
+        <label>Username</label>
         <input
           required
           type="text"
-          name="email"
-          value={email}
-          placeholder="Enter Email"
+          name="username"
+          value={username}
+          placeholder="Enter Username"
           onChange={handleChange}
         />
         <label>Password</label>

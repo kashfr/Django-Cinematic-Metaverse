@@ -18,7 +18,8 @@ import Unplug from "./screens/Unplug/Unplug";
 const App = () => {
   // let navigate = useNavigate();
   const [user, setUser] = useState(null);
-
+  const [toggle, setToggle] = useState(false)
+  
   useEffect(() => {
     const fetchUser = async () => {
       const user = await verifyUser();
@@ -30,7 +31,7 @@ const App = () => {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home user={user} />} />
+        <Route path="/" element={<Home user={user} toggle={toggle}/>} />
         <Route path="/ascend" element={<Ascend setUser={setUser} />} />
         <Route path="/plug-in" element={<PlugIn setUser={setUser} />} />
         <Route path="/unplug" element={<Unplug setUser={setUser} />} />
@@ -44,7 +45,7 @@ const App = () => {
           path="nfts/:id/edit"
           element={user ? <NFTEdit user={user} /> : <Navigate to="/ascend" />}
         />
-        <Route exact path="/nfts/:id" element={<NFTDetail user={user} />} />
+        <Route exact path="/nfts/:id" element={<NFTDetail user={user} setToggle={setToggle}/>} />
 
         <Route path="/avatars" element={<AvatarProfile />} />
         <Route path="/avatars/:id" element={<AvatarProfile />} />

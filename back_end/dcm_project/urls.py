@@ -1,17 +1,11 @@
 from django.contrib import admin
 from django.urls import path, include
-
-from django.conf import settings
-from django.conf.urls.static import static
-
 from rest_framework import routers
-
 from dcm_app import views
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register('avatars', views.AvatarBookViewSet)
 router.register('nfts', views.NFTViewSet)
-# router.register('nft', views.NFTFormViewSet)
 router.register('observations', views.ObservationViewSet)
 
 urlpatterns = [

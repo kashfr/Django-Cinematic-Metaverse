@@ -3,7 +3,7 @@ import "./NFTCards.css";
 import NFTCard from "../NFTCard/NFTCard";
 import { getNFTs } from "../../services/nfts";
 
-const NFTCards = () => {
+const NFTCards = ({toggle}) => {
   const [nfts, setNFTs] = useState([]);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const NFTCards = () => {
       setNFTs(allNFTs);
     };
     fetchNFTs();
-  }, []);
+  }, [toggle]);
 
   const cards = nfts
     .reverse()

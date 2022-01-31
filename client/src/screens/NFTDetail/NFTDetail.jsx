@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import "./NFTDetail.css";
 import { Layout, ObservationForm, Observations } from "../../components";
 import { getNFT, deleteNFT, updateNFT } from "../../services/nfts";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 // import StarRating from "star-rating-react";
 
 const NFTDetail = (props) => {
+  const navigate = useNavigate()
+
   const [nft, setNFT] = useState({
     name: "",
     image_url: "",
@@ -13,10 +15,9 @@ const NFTDetail = (props) => {
     observations: [],
   });
   const [observation, setObservation] = useState({
-    username: "",
-    // rating: "",
+    name: "",
     text: "",
-    observations: [],
+    // observations: [],
   });
   const [isLoaded, setLoaded] = useState(false);
   const { id } = useParams();
@@ -41,6 +42,7 @@ const NFTDetail = (props) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     nft.observations.push(observation);
+    console.log(nft);
     setNFT(nft);
     await updateNFT(id, nft);
   };
@@ -78,7 +80,11 @@ const NFTDetail = (props) => {
               </Link>
               <button
                 className="delete-button"
-                onClick={() => deleteNFT(nft.id)}
+                onClick={() => {
+                  deleteNFT(nft.id)
+                  props.setToggle(prev => !prev)
+                  navigate("/")
+                }}
               >
                 Delete
               </button>
@@ -87,13 +93,13 @@ const NFTDetail = (props) => {
         </div>
         <div className="observations-wrapper">
           <ObservationForm
-            username={observation.username}
+            username={observation.name}
             // rating={observation.rating}
             description={observation.text}
             onSubmit={handleSubmit}
             onChange={handleChange}
           />
-          {/* <Observations observations={nft.observations} /> */}
+          <Observations observations={nft.observations} />
         </div>
       </>
     </Layout>

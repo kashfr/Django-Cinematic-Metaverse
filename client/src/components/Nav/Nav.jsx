@@ -37,7 +37,6 @@ const Nav = ({ user }) => {
         </NavLink>
         <div className="links">
           {/* {user && <div className="link welcome">Welcome, {user.username}</div>} */}
-          {user && <div className="link welcome">Welcome, {user.username}</div>}
           {alwaysOptions}
           {user ? authenticatedOptions : unauthenticatedOptions}
         </div>

@@ -18,7 +18,7 @@ export const getNFT = async (id) => {
   }
 };
 
-export const createNFT = async (nft) => {
+export const createNFT = async nft => {
   try {
     const response = await api.post("/nfts", nft);
     return response.data;
