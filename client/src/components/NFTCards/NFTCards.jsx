@@ -26,7 +26,6 @@ const NFTCards = ({ toggle }) => {
         />
       ) : null
     );
-  console.log(nfts);
   return (
     <div className="nft-cards">
       <div className="bubbling">Just Listed!</div>

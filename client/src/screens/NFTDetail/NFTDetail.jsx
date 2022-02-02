@@ -62,7 +62,7 @@ const NFTDetail = (props) => {
           />
           <div className="detail">
             <div className="name">{nft.name}</div>
-            <div className="current_bid">{`$${nft.current_bid}`}</div>
+            <div className="current_bid">{`${nft.current_bid}`} SHA</div>
             <div className="description">{nft.observation}</div>
             <div className="button-container">
               <Link className="edit-button" to={`/nfts/${nft.id}/edit`}>

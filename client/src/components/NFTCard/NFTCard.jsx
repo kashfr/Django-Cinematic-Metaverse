@@ -1,7 +1,7 @@
 import "./NFTCard.css";
 import { Link } from "react-router-dom";
 
-const NFTCard = ({ id, name, image_url, key }) => {
+const NFTCard = ({ id, name, image_url }) => {
   return (
     <div className="nft-card">
       <Link className="card" to={`/nfts/${id}`}>

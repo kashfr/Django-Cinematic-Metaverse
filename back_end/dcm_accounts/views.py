@@ -48,3 +48,10 @@ class RegisterUsersView(generics.ListCreateAPIView):
             username=username, password=password, email=email
         )
         return Response(status=status.HTTP_201_CREATED)
+
+
+# class BlacklistRefreshView(APIView):
+#     def post(self, request)
+#     token = RefreshToken(request.data.get('refresh'))
+#     token.blacklist()
+#     return Response("Success")
