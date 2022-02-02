@@ -33,9 +33,9 @@ const Ascend = (props) => {
         username: "",
         password: "",
         email: "",
-        // passwordConfirmation: "",
-        // isError: true,
-        // errorMsg: "Ascension Details Invalid",
+        passwordConfirmation: "",
+        isError: true,
+        errorMsg: "Ascension Details Invalid",
       });
     }
   };
