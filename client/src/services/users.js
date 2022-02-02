@@ -13,7 +13,7 @@ export const ascend = async (credentials) => {
 
 export const plugIn = async (credentials) => {
   try {
-    const resp = await api.post("plug-in", credentials);
+    const resp = await api.post("/plug-in", credentials);
     localStorage.setItem("token", resp.data.access);
     localStorage.setItem("refresh", resp.data.refresh);
     return resp;
@@ -44,7 +44,7 @@ export const changePassword = async (passwords, user) => {
 export const verifyUser = async () => {
   const refresh = localStorage.getItem("refresh");
   if (refresh) {
-    const resp = await api.post("refresh-token", { refresh });
+    const resp = await api.post("/refresh-token", { refresh });
     localStorage.setItem("token", resp.data.access);
     return resp;
   }
