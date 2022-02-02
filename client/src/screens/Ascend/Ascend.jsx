@@ -31,11 +31,11 @@ const Ascend = (props) => {
       console.error(error);
       setForm({
         username: "",
-        email: "",
         password: "",
-        passwordConfirmation: "",
-        isError: true,
-        errorMsg: "Sign Up Details Invalid",
+        email: "",
+        // passwordConfirmation: "",
+        // isError: true,
+        // errorMsg: "Ascension Details Invalid",
       });
     }
   };
@@ -49,7 +49,7 @@ const Ascend = (props) => {
         </button>
       );
     } else {
-      return <button type="submit">Sign Up</button>;
+      return <button type="submit">Ascend</button>;
     }
   };
 

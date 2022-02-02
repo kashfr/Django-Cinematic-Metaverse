@@ -7,6 +7,7 @@ router = routers.DefaultRouter(trailing_slash=False)
 router.register('avatars', views.AvatarBookViewSet)
 router.register('nfts', views.NFTViewSet)
 router.register('observations', views.ObservationViewSet)
+router.register('ascend', views.UserViewSet)
 
 urlpatterns = [
     path('', include('dcm_accounts.urls')),

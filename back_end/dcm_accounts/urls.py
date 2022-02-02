@@ -6,7 +6,7 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('ascend', TokenObtainPairView.as_view()),
-    path('plug-in', TokenObtainPairView.as_view()),
+    # path('plug-in', TokenObtainPairView.as_view()),
     # path('unplug', BlacklistTokenUpdateView.as_view())
     path('refresh-token', TokenRefreshView.as_view()),
     path('change-password', auth_views.PasswordChangeView.as_view()),

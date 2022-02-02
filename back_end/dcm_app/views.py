@@ -3,7 +3,9 @@ from django.shortcuts import render, redirect
 from rest_framework import viewsets, permissions, generics
 from rest_framework.response import Response
 from rest_framework import mixins
-from .serializers import AvatarSerializer, NFTSerializer, ObservationSerializer
+from django.contrib.auth.models import User
+
+from .serializers import AvatarSerializer, NFTSerializer, ObservationSerializer, UserSerializer
 from .models import Avatar, NFT, Observation
 
 # Create your views here.
@@ -27,3 +29,8 @@ class ObservationViewSet(viewsets.ModelViewSet):
     queryset = Observation.objects.all()
     serializer_class = ObservationSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
