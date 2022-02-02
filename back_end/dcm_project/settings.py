@@ -194,7 +194,7 @@ SIMPLE_JWT = {
 
 CORS_ALLOWED_ORIGINS = [
     'https://cinematic-metaverse.herokuapp.com',
-    'https://61fad4a01660e50c8d792c27--amazing-swartz-52b635.netlify.app'
+    'https://61fad4a01660e50c8d792c27--amazing-swartz-52b635.netlify.app',
     'http://127.0.0.1:3000',
     'http://127.0.0.1:8000',
     'http://127.0.0.1:8001',
